@@ -1,4 +1,4 @@
 export var obj = {
-	inp_len=2,
-	placeholders=["hello","world"]
+	inp_len:2,
+	placeholders:["hello","world"]
 };
