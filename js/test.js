@@ -8,4 +8,4 @@ function test_input1(input2){
 function test_input2(input1){
 	return input1/5;
 }
-export func_test=[test_input1,test_input2];
+export var func_test=[test_input1,test_input2];
