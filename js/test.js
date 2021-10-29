@@ -1,4 +1,11 @@
 export var obj = {
-	inp_len:2,
-	placeholders:["hello","world"]
+	length:2,
+	placeholders:["input1","input2"]
 };
+function test_input1(input2){
+	return input2*5;
+}
+function test_input2(input1){
+	return input1/5;
+}
+export func_test=[test_input1,test_input2];
