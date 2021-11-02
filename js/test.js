@@ -1,5 +1,6 @@
 export const obj = {
 	length:2,
+	description:"A test module just for testing, You know!",
 	placeholders:["input1","input2"],
 	type:["number","number"]
 };
