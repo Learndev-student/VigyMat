@@ -1,4 +1,12 @@
-import data from "/web/list.json";
+const data={
+        "languages":1,
+        "js":{
+        "length":1,                                                                                             "titles":["Test Module"],                                                                               "urls":["test"]
+        },
+        "c":{
+                "length":0
+        }
+};
 const modules=data['js'];
 var url_arr=(window.location.href).split("/");
 var obj;
