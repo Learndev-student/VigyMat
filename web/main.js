@@ -1,4 +1,4 @@
-import data from "/list.json" assert { type: "json" };
+import data from "/web/list.json";
 const modules=data['js'];
 var url_arr=(window.location.href).split("/");
 var obj;
