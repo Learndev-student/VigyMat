@@ -1,4 +1,13 @@
-export var obj = {
-	inp_len=2,
-	placeholders=["hello","world"]
+export const obj = {
+	length:2,
+	description:"A test module just for testing, You know!",
+	placeholders:["input1","input2"],
+	type:["number","number"]
 };
+function test_input1(arr){
+	return arr[0]*5;
+}
+function test_input2(arr){
+	return arr[0]/5;
+}
+export const functions=[test_input1,test_input2];
