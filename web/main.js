@@ -50,7 +50,7 @@ function reset(){
 	container.appendChild(submit);
 }
 async function load_module(str){
-	import(`/js/${str}.js`).then((module) => {
+	import(`https://learndev-student.github.io/VigyMat/js/${str}.js`).then((module) => {
 	  obj=module.obj;
 	  functions=module.functions;
 	  reset();
