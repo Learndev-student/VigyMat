@@ -12,7 +12,7 @@ var url_arr=(window.location.href).split("/");
 var obj;
 var functions;
 var inp_arr=[];
-var title=document.getElemenetsByTagName("title")[0];
+var title=document.getElementsByTagName("title")[0];
 var container=document.getElementById("content");
 function calculate(i){
 	let inputs=[];
