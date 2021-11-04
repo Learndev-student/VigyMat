@@ -78,5 +78,4 @@ function get(str){
 switch (url_arr[4]){
 	case "modules" : get(url_arr[4]);
 		break;
-	default : main_page();
 }
