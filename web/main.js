@@ -50,15 +50,15 @@ async function load_module(str){
   });
 }
 function module_not_found(){
-	let str=`${url_arr[3]}/${url_arr[4]}`;
+	let str=`${url_arr[4]}/${url_arr[5]}`;
 	container.innerHTML=`<h3>Sorry!,</h3><p>The page ${str} not found.</p>`;
 }
 function get(str){
 	let n;
 	for(n=0;n<modules.length;n++){
-		if(modules.urls[n]==url_arr[4]){
+		if(modules.urls[n]==url_arr[5]){
 			title.text=modules.titles[n];
-			load_module(url_arr[4]);
+			load_module(url_arr[5]);
 			break;
 		}
 	}
@@ -67,7 +67,7 @@ function get(str){
 	}
 }
 
-switch (url_arr[3]){
+switch (url_arr[4]){
 	case "modules" : get(url_arr[4]);
 		break;
 	default : main_page();
