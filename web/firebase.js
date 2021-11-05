@@ -13,4 +13,4 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-document.getElementById("load").innerHTML="Loaded";
+document.getElementById("firebase").innerHTML="Loaded";

@@ -1,0 +1,40 @@
+#header {
+	display: block;
+	border-radius: 10px;
+	text-align: center;
+	text-shadow: 2px, 3px ,2px, lightblue;
+	background: -moz-linear-gradient(to right bottom, purple, lightblue);
+	border : 1px, bold, black;
+	padding-top: 6px;
+	padding-left: 10px;
+	padding-bottom: 6px;
+}
+#header .location_title {
+	color: skyblue;
+	text-align: left;
+}
+#header span {
+	color: blue;
+}
+#app .box {
+	background: -moz-linear-gradient(to right bottom, white, lightgrey);
+	border: 3px, dashed, purple;
+	border-radius: 10px;
+	word-wrap: break-word;
+	overflow: auto;
+	margin-top: 8px;
+}
+#app .heading{
+	color: black;
+	padding-top: 5px;
+	padding-left: 10px;
+	background: -moz-linear-gradient(to right bottom, lightgrey, white);
+}
+#app .content{
+	padding-left: 10px;
+	padding-bottom: 8px;
+}
+#footer {
+	font-size: 10px;
+	color: #aaa;
+}

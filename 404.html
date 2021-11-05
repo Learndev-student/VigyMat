@@ -3,21 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://learndev-student.github.io/VigyMat/web/styles.css">
+    <noscript>Sorry!, Your browser does not support this website</noscript>
     <script defer type="module" src="https://learndev-student.github.io/VigyMat/web/main.js"></script>
     <script defer type="module" src="https://learndev-student.github.io/VigyMat/web/firebase.js"></script>
     <title>VigyMat</title>
   </head>
   <body>
-	  <header>
-      <h2>Welcome to VigyMat</h2>
-      <p>A developing project for Maths and Science enthuastics</p>
+	  <header id="header">
+		  <h2>VigyMat</h2>
+		  <p class="location_title">Main page <span>/</span></p>
+		  <hr/>
 	  </header>
-    <div id="content">
-	    <p>Latest Modules</p>
-	    <ol id="module_list"></ol>
-    </div>
-    <footer>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-    </footer>
+	  <div id="app"></div>
+	  <footer id="footer">
+		  <p id="firebase">Firebase SDK Loading&hellip;</p>
+	  </footer>
   </body>
 </html>
