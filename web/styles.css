@@ -5,10 +5,8 @@
 	text-shadow: 2px, 3px ,2px, lightblue;
 	-moz-background: linear-gradient(to right bottom, purple, lightblue);
 	-webkit-background: linear-gradient(to right bottom, purple, lightblue);
-	-ms-background: linear-gradient(to right bott
-om, purple, lightblue);
-	-o-background: linear-gradient(to right bott
-om, purple, lightblue);
+	-ms-background: linear-gradient(to right bottom, purple, lightblue);
+	-o-background: linear-gradient(to right bottom, purple, lightblue);
 	border : 1px, bold, black;
 	padding-top: 6px;
 	padding-left: 10px;
