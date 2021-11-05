@@ -3,10 +3,10 @@
 	border-radius: 10px;
 	text-align: center;
 	text-shadow: 2px, 3px ,2px, lightblue;
-	-moz-background: linear-gradient(to right bottom, purple, lightblue);
-	-webkit-background: linear-gradient(to right bottom, purple, lightblue);
-	-ms-background: linear-gradient(to right bottom, purple, lightblue);
-	-o-background: linear-gradient(to right bottom, purple, lightblue);
+	background: -moz-linear-gradient(to right bottom, purple, lightblue);
+	background: -webkit-linear-gradient(to right bottom, purple, lightblue);
+	background: -ms-linear-gradient(to right bottom, purple, lightblue);
+	background: -o-linear-gradient(to right bottom, purple, lightblue);
 	border : 1px, bold, black;
 	padding-top: 6px;
 	padding-left: 10px;
@@ -20,10 +20,10 @@
 	color: blue;
 }
 #app .box {
-	-moz-background: linear-gradient(to right bottom, white, lightgrey);
-	-webkit-background: linear-gradient(to right bottom, white, lightgrey);
-	-ms-background: linear-gradient(to right bottom, white, lightgrey);
-	-o-background: linear-gradient(to right bottom, white, lightgrey);
+	background: -webkit-linear-gradient(to right bottom, white, lightgrey);
+	background: -moz-linear-gradient(to right bottom, white, lightgrey);
+	background: -ms-linear-gradient(to right bottom, white, lightgrey);
+	background: -o-linear-gradient(to right bottom, white, lightgrey);
 	border: 3px, dashed, purple;
 	border-radius: 10px;
 	word-wrap: break-word;
@@ -34,10 +34,10 @@
 	color: black;
 	padding-top: 5px;
 	padding-left: 10px;
-	-moz-background: linear-gradient(to right bottom, lightgrey, white);
-	-webkit-background: linear-gradient(to right bottom, lightgrey, white);
-	-ms-background: linear-gradient(to right bottom, lightgrey, white);
-	-o-background: linear-gradient(to right bottom, lightgrey, white);
+	background: -moz-linear-gradient(to right bottom, lightgrey, white);
+	background: -webkit-linear-gradient(to right bottom, lightgrey, white);
+	background: -ms-linear-gradient(to right bottom, lightgrey, white);
+	background: -o-linear-gradient(to right bottom, lightgrey, white);
 }
 #app .content{
 	padding-left: 10px;
