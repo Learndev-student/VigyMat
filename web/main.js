@@ -2,11 +2,11 @@ import {get} from "https://learndev-student.github.io/VigyMat/web/modules.js";
 function render_content(obj){
 	let app=document.getElementById("app");
 	let n=0;
-	obj["heading"].forEach((i)=>{
+	obj["headings"].forEach((i)=>{
 		let box=document.createElement("div");
 		box["class"]="box";
 		let heading=document.createElement("h2");
-		heading["heading"]="heading";
+		heading["class"]="heading";
 		heading.text=i;
 		box.appendChild(heading);
 		box.innerHTML+=obj["content"][n++];
