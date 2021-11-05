@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js";
+import { getPerformance } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-performance.js";
   const firebaseConfig = {
     apiKey: "AIzaSyCc34xLRwDkPduN1B1eb4KSTOvrVDxRfv0",
     authDomain: "sciemath.firebaseapp.com",
@@ -11,6 +11,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-
     measurementId: "G-D96P3GBYKF"
   };
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+let app = initializeApp(firebaseConfig);
+let analytics = getAnalytics(app);
+let perf= getPerformance(app);
 document.getElementById("firebase").innerHTML="Loaded";

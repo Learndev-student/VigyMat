@@ -8,10 +8,8 @@ const data={
         }
 };
 const modules=data['js'];
-var obj;
 var functions;
 var inp_arr=[];
-var container=document.getElementById("content");
 function calculate(i){
 	let inputs=[];
 	let n=0;
@@ -23,10 +21,12 @@ function calculate(i){
 	if(m!=-1){inp_arr[m].value=functions[m](inputs);
 	}
 }
-function reset(){
+function reset(Obj){
+	let obj=Obj.content[Obj.calc];
+	let container= document.createElement("div");
 	container.innerHTML="";
 	let i;
-	for(i=0;i<obj.length;i++){
+	for(i=0;i<Obj.length;i++){
 		let input=document.createElement("input");
 		inp_arr[i]=input;
 		input.placeholder=obj.placeholders[i];
@@ -41,13 +41,16 @@ function reset(){
 	submit['class']="submit";
 	submit.onclick=()=>calculate();
 	container.appendChild(submit);
+	Obj.content[Obj.calc]=container.innerHTML;
+	return Obj;
 }
 async function load_module(str){
 	import(`https://learndev-student.github.io/VigyMat/js/${str}.js`).then((module) => {
-	  obj=module.obj;
+	  let Obj=module.Obj;
 	  functions=module.functions;
-	  reset();
-	console.log(str,"module loaded");
+	  Obj=reset(Obj);
+	  console.log(str,"module loaded");
+	  return Obj;
   });
 }
 function module_not_found(){
@@ -59,13 +62,14 @@ function get(arr){
 	for(n=0;n<modules.length;n++){
 		if(modules.urls[n]==arr[5]){
 			document.getElementsByTagName("title")[0].text=modules.titles[n];
-			load_module(arr[5]);
+			let Obj=load_module(arr[5]);
 			break;
 		}
 	}
 	if(n==modules.length){
-		module_not_found();
+		Obj=module_not_found();
 	}
+	return Obj;
 }
 
 export {get};
