@@ -3,7 +3,12 @@
 	border-radius: 10px;
 	text-align: center;
 	text-shadow: 2px, 3px ,2px, lightblue;
-	background: -moz-linear-gradient(to right bottom, purple, lightblue);
+	-moz-background: linear-gradient(to right bottom, purple, lightblue);
+	-webkit-background: linear-gradient(to right bottom, purple, lightblue);
+	-ms-background: linear-gradient(to right bott
+om, purple, lightblue);
+	-o-background: linear-gradient(to right bott
+om, purple, lightblue);
 	border : 1px, bold, black;
 	padding-top: 6px;
 	padding-left: 10px;
@@ -17,7 +22,10 @@
 	color: blue;
 }
 #app .box {
-	background: -moz-linear-gradient(to right bottom, white, lightgrey);
+	-moz-background: linear-gradient(to right bottom, white, lightgrey);
+	-webkit-background: linear-gradient(to right bottom, white, lightgrey);
+	-ms-background: linear-gradient(to right bottom, white, lightgrey);
+	-o-background: linear-gradient(to right bottom, white, lightgrey);
 	border: 3px, dashed, purple;
 	border-radius: 10px;
 	word-wrap: break-word;
@@ -28,7 +36,10 @@
 	color: black;
 	padding-top: 5px;
 	padding-left: 10px;
-	background: -moz-linear-gradient(to right bottom, lightgrey, white);
+	-moz-background: linear-gradient(to right bottom, lightgrey, white);
+	-webkit-background: linear-gradient(to right bottom, lightgrey, white);
+	-ms-background: linear-gradient(to right bottom, lightgrey, white);
+	-o-background: linear-gradient(to right bottom, lightgrey, white);
 }
 #app .content{
 	padding-left: 10px;
