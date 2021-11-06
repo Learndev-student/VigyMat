@@ -47,15 +47,13 @@ function reset(Obj){
 }
 async function load_module(str){
 	let Obj;
-	import(`https://learndev-student.github.io/VigyMat/js/${str}.js`).then((module) => {
-	  Obj=module.Obj;
-	  console.log(Obj, "loadmodule()1");
-	  functions=module.functions;
-	  Obj=reset(Obj);
-	  console.log(Obj,`${str} module loaded`);
-  });
-	console.log(Obj, 2);
-	return await Obj;
+	let module= await import(`https://learndev-student.github.io/VigyMat/js/${str}.js`);
+	Obj=module.Obj;
+	console.log(Obj, "loadmodule()1");
+	functions=module.functions;
+	Obj=reset(Obj);
+	console.log(Obj,`${str} module loaded`);
+	return Obj;
 }
 function module_not_found(){
 	let str=`${url_arr[4]}/${url_arr[5]}`;
