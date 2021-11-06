@@ -52,8 +52,9 @@ async function load_module(str){
 	  functions=module.functions;
 	  Obj=reset(Obj);
 	  console.log(Obj,`${str} module loaded`);
-	  return Obj;
   });
+	console.log(Obj, 2);
+	return await Obj;
 }
 function module_not_found(){
 	let str=`${url_arr[4]}/${url_arr[5]}`;
@@ -65,7 +66,7 @@ function get(arr){
 	for(n=0;n<modules.length;n++){
 		if(modules.urls[n]==arr[5]){
 			document.getElementsByTagName("title")[0].text=modules.titles[n];
-			load_module(arr[5]).then((o)=>Obj=o);
+			Obj=load_module(arr[5]);
 			break;
 		}
 	}
