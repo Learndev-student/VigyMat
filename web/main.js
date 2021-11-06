@@ -17,6 +17,7 @@ function render_content(obj){
 		}
 		app.appendChild(box);
 	});
+	d_links();
 }
 var url_arr=(window.location.href).split('/');
 switch (url_arr[4]){
@@ -25,11 +26,13 @@ switch (url_arr[4]){
 		break;
 	//default : render_
 };
-document.getElementsByTagName("a").forEach((l)=>{
-	if (l.href[0]=='/'){
-		l.onclick=(event)=>{
+function d_links(){
+	let links=document.getElementsByClassName('d_link');
+	for(let n=0;n<links.length;n++){
+		links[n].onclick=(event)=>{
 			get((`https://learndev-student.github.io/VigyMat${l.href}`).split('/'));
 			event.preventDefault();
 		};
-		}
-	});
+}
+}
+d_links();
