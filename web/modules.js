@@ -46,8 +46,9 @@ function reset(Obj){
 	return Obj;
 }
 async function load_module(str){
+	let Obj;
 	import(`https://learndev-student.github.io/VigyMat/js/${str}.js`).then((module) => {
-	  let Obj=module.Obj;
+	  Obj=module.Obj;
 	  console.log(Obj, "loadmodule()1");
 	  functions=module.functions;
 	  Obj=reset(Obj);
