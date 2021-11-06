@@ -4,9 +4,9 @@ function render_content(obj){
 	let n=0;
 	obj["headings"].forEach((i)=>{
 		let box=document.createElement("div");
-		box["class"]="box";
+		box.class="box";
 		let heading=document.createElement("h2");
-		heading["class"]="heading";
+		heading.class="heading";
 		heading.text=i;
 		box.appendChild(heading);
 		if(typeof obj["content"][n]=="string"){

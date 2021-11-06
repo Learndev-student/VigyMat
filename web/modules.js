@@ -33,13 +33,13 @@ function reset(Obj){
 		input.placeholder=obj.placeholders[i];
 		input.type=obj.type[i];
 		input.name=i;
-		input["class"]="inputs";
+		input.class="inputs";
 		ele_arr.push(input);
 	}
 	let submit=document.createElement("input");
 	submit.type="submit";
 	submit.value="SUBMIT";
-	submit['class']="submit";
+	submit.class="submit";
 	submit.onclick=()=>calculate();
 	ele_arr.push(submit);
 	Obj.content[Obj.calc]=ele_arr;
