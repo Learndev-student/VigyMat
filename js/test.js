@@ -1,4 +1,5 @@
 const obj = {
+	length:2,
 	placeholders:["input1","input2"],
 	type:["number","number"]
 };
