@@ -42,14 +42,16 @@ function reset(Obj){
 	submit.onclick=()=>calculate();
 	container.appendChild(submit);
 	Obj.content[Obj.calc]=container.innerHTML;
+	console.log(Obj, "resst()");
 	return Obj;
 }
 async function load_module(str){
 	import(`https://learndev-student.github.io/VigyMat/js/${str}.js`).then((module) => {
 	  let Obj=module.Obj;
+	  console.log(Obj, "loadmodule()1");
 	  functions=module.functions;
 	  Obj=reset(Obj);
-	  console.log(str,"module loaded");
+	  console.log(Obj,`${str} module loaded`);
 	  return Obj;
   });
 }
@@ -70,6 +72,7 @@ function get(arr){
 	if(n==modules.length){
 		Obj=module_not_found();
 	}
+	console.log(Obj, "get()");
 	return Obj;
 }
 
