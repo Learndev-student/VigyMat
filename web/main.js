@@ -17,6 +17,7 @@ var url_arr=(window.location.href).split('/');
 switch (url_arr[4]){
 	case "modules": 
 		let obj=get(url_arr);
+		console.log(obj, "Got by get");
 		render_content(obj);
 		break;
 	//default: main_page().
