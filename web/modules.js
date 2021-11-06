@@ -65,7 +65,7 @@ function get(arr){
 	for(n=0;n<modules.length;n++){
 		if(modules.urls[n]==arr[5]){
 			document.getElementsByTagName("title")[0].text=modules.titles[n];
-			load_module(arr[5]).then((o)=>Obj=o;);
+			load_module(arr[5]).then((o)=>Obj=o);
 			break;
 		}
 	}
