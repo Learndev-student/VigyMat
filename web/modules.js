@@ -59,13 +59,13 @@ function module_not_found(){
 	let str=`${url_arr[4]}/${url_arr[5]}`;
 	container.innerHTML=`<h3>Sorry!,</h3><p>The page ${str} not found.</p>`;
 }
-function get(arr){
+async function get(arr){
 	let n;
 	let Obj;
 	for(n=0;n<modules.length;n++){
 		if(modules.urls[n]==arr[5]){
 			document.getElementsByTagName("title")[0].text=modules.titles[n];
-			Obj=load_module(arr[5]);
+			Obj=await load_module(arr[5]);
 			break;
 		}
 	}

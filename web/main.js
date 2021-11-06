@@ -16,9 +16,11 @@ function render_content(obj){
 var url_arr=(window.location.href).split('/');
 switch (url_arr[4]){
 	case "modules": 
-		let obj=get(url_arr);
+		get(url_arr).then((o)=>{
+		let obj=o;
 		console.log(obj, "Got by get");
 		render_content(obj);
+		});
 		break;
 	//default: main_page().
 };
