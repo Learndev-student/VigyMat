@@ -30,7 +30,7 @@ function d_links(){
 	let links=document.getElementsByClassName('d_link');
 	for(let n=0;n<links.length;n++){
 		links[n].onclick=(event)=>{
-			get((`https://learndev-student.github.io/VigyMat${l.href}`).split('/'));
+			get((`https://learndev-student.github.io/VigyMat${links[n].href}`).split('/'));
 			event.preventDefault();
 		};
 }
