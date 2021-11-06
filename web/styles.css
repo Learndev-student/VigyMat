@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Red+Hat+Mono:ital,wght@0,400;0,600;1,400&family=Roboto+Mono:wght@300&family=Ubuntu:wght@300&family=Zen+Antique&display=swap');
 #header {
 	display: block;
 	border-radius: 10px;
@@ -8,6 +9,7 @@
 	padding-top: 6px;
 	padding-left: 10px;
 	padding-bottom: 6px;
+	font-family: 'Red Hat Mono', monospace;
 }
 #header .location_title {
 	color: skyblue;
@@ -23,12 +25,17 @@
 	word-wrap: break-word;
 	overflow: auto;
 	margin-top: 8px;
+	font-family: 'Roboto Mono', monospace;
 }
 #app .heading{
 	color: black;
 	padding-top: 5px;
 	padding-left: 10px;
+	font-family: 'Montserrat', sans-serif;
 	background: linear-gradient(to right bottom, lightgrey, white);
+}
+#app .inputs{
+	font-family: 'Ubuntu', sans-serif;
 }
 #footer {
 	font-size: 10px;

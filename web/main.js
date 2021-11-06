@@ -1,6 +1,7 @@
 import {get} from "https://learndev-student.github.io/VigyMat/web/modules.js";
 function render_content(obj){
 	let app=document.getElementById("app");
+	app.innerHTML="";
 	let n=0;
 	obj["headings"].forEach((i)=>{
 		let box=document.createElement("div");
@@ -22,5 +23,13 @@ switch (url_arr[4]){
 	case "modules": 
 		get(url_arr).then((o)=>render_content(o));
 		break;
-	//default: main_page().
+	//default : render_
 };
+document.getElementsByTagName("a").forEach((l)=>{
+	if (l.href[0]=='/'){
+		l.onclick=(event)=>{
+			get((`https://learndev-student.github.io/VigyMat${l.href}`).split('/'));
+			event.preventDefault();
+		};
+		}
+	});
