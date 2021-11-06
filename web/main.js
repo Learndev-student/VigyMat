@@ -4,13 +4,13 @@ function render_content(obj){
 	let n=0;
 	obj["headings"].forEach((i)=>{
 		let box=document.createElement("div");
-		box.class="box";
+		box.className="box";
 		let heading=document.createElement("h2");
-		heading.class="heading";
-		heading.text=i;
+		heading.className="heading";
+		heading.textContent=i;
 		box.appendChild(heading);
 		if(typeof obj["content"][n]=="string"){
-		box.innerHTML+=obj["content"][n++];
+			box.innerHTML+=obj["content"][n++];
 		}else{
 			obj["content"][n++].forEach((e)=>box.appendChild(e));
 		}
@@ -20,11 +20,7 @@ function render_content(obj){
 var url_arr=(window.location.href).split('/');
 switch (url_arr[4]){
 	case "modules": 
-		get(url_arr).then((o)=>{
-		let obj=o;
-		console.log(obj, "Got by get");
-		render_content(obj);
-		});
+		get(url_arr).then((o)=>render_content(o));
 		break;
 	//default: main_page().
 };

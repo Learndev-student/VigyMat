@@ -1,10 +1,7 @@
 const data={
         "languages":1,
         "js":{
-        "length":1,                                                                                             "titles":["Test Module"],                                                                               "urls":["test"]
-        },
-        "c":{
-                "length":0
+        	"length":1,                                           "titles":["Test Module"],                             "urls":["test"]
         }
 };
 const modules=data['js'];
@@ -33,17 +30,16 @@ function reset(Obj){
 		input.placeholder=obj.placeholders[i];
 		input.type=obj.type[i];
 		input.name=i;
-		input.class="inputs";
+		input.className="inputs";
 		ele_arr.push(input);
 	}
 	let submit=document.createElement("input");
 	submit.type="submit";
 	submit.value="SUBMIT";
-	submit.class="submit";
+	submit.className="submit";
 	submit.onclick=()=>calculate();
 	ele_arr.push(submit);
 	Obj.content[Obj.calc]=ele_arr;
-	console.log(Obj, "resst()");
 	return Obj;
 }
 async function load_module(str){
@@ -58,14 +54,18 @@ async function load_module(str){
 }
 function module_not_found(){
 	let str=`${url_arr[4]}/${url_arr[5]}`;
-	container.innerHTML=`<h3>Sorry!,</h3><p>The page ${str} not found.</p>`;
+	let Obj={
+		description:"404",
+		headings:["404!"],
+		content:[`<h3>Sorry!,</h3><p>The page ${str} not found.</p>`];
+	return Obj;
 }
 async function get(arr){
 	let n;
 	let Obj;
 	for(n=0;n<modules.length;n++){
 		if(modules.urls[n]==arr[5]){
-			document.getElementsByTagName("title")[0].text=modules.titles[n];
+			document.getElementsByTagName("title")[0].textContent=modules.titles[n];
 			Obj=await load_module(arr[5]);
 			break;
 		}
@@ -73,7 +73,6 @@ async function get(arr){
 	if(n==modules.length){
 		Obj=module_not_found();
 	}
-	console.log(Obj, "get()");
 	return Obj;
 }
 
