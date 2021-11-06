@@ -59,10 +59,11 @@ function module_not_found(){
 }
 function get(arr){
 	let n;
+	let Obj;
 	for(n=0;n<modules.length;n++){
 		if(modules.urls[n]==arr[5]){
 			document.getElementsByTagName("title")[0].text=modules.titles[n];
-			let Obj=load_module(arr[5]);
+			Obj=load_module(arr[5]);
 			break;
 		}
 	}
