@@ -53,6 +53,7 @@ async function load_module(str){
 	return Obj;
 }
 function module_not_found(){
+	let url_arr=window.location.href.split('/');
 	let str=`${url_arr[4]}/${url_arr[5]}`;
 	let Obj={
 		description:"404",
