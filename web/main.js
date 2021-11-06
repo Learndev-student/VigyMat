@@ -19,6 +19,7 @@ function render_content(obj){
 	});
 	d_links();
 }
+function load_page(){
 var url_arr=(window.location.href).split('/');
 switch (url_arr[4]){
 	case "modules": 
@@ -26,6 +27,8 @@ switch (url_arr[4]){
 		break;
 	//default : render_
 };
+}
+load_page();
 function d_links(){
 	let links=document.getElementsByClassName('d_link');
 	for(let n=0;n<links.length;n++){
@@ -37,3 +40,4 @@ function d_links(){
 }
 }
 d_links();
+window.onpopstate=()=>load_page();
