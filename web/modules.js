@@ -26,22 +26,23 @@ function reset(Obj){
 	let container= document.createElement("div");
 	container.innerHTML="";
 	let i;
-	for(i=0;i<Obj.length;i++){
+	let ele_arr=[];
+	for(i=0;i<obj.length;i++){
 		let input=document.createElement("input");
 		inp_arr[i]=input;
 		input.placeholder=obj.placeholders[i];
 		input.type=obj.type[i];
 		input.name=i;
 		input["class"]="inputs";
-		container.appendChild(input);
+		ele_arr.concat([input]);
 	}
 	let submit=document.createElement("input");
 	submit.type="submit";
 	submit.value="SUBMIT";
 	submit['class']="submit";
 	submit.onclick=()=>calculate();
-	container.appendChild(submit);
-	Obj.content[Obj.calc]=container.innerHTML;
+	ele_arr.concat([submit]);
+	Obj.content[Obj.calc]=ele_arr;
 	console.log(Obj, "resst()");
 	return Obj;
 }

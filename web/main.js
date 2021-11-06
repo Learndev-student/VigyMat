@@ -9,7 +9,11 @@ function render_content(obj){
 		heading["class"]="heading";
 		heading.text=i;
 		box.appendChild(heading);
+		if(typeof obj["content"][n]=="string"){
 		box.innerHTML+=obj["content"][n++];
+		}else{
+			obj["content"][n++].forEach((e)=>box.appendChild(e));
+		}
 		app.appendChild(box);
 	});
 }
