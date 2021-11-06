@@ -57,7 +57,8 @@ function module_not_found(){
 	let Obj={
 		description:"404",
 		headings:["404!"],
-		content:[`<h3>Sorry!,</h3><p>The page ${str} not found.</p>`];
+		content:[`<h3>Sorry!,</h3><p>The page ${str} not found.</p>`]
+	};
 	return Obj;
 }
 async function get(arr){
