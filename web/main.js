@@ -31,7 +31,7 @@ function d_links(){
 	for(let n=0;n<links.length;n++){
 		links[n].onclick=(event)=>{
 			history.pushState({},'',links[n].href);
-			get((links[n].href).split('/'));
+			get((links[n].href).split('/')).then((o)=>render_content(o));
 			event.preventDefault();
 		};
 }
