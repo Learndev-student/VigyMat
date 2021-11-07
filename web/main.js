@@ -24,12 +24,13 @@ function render_content(obj){
 async function load_page(){
 var url_arr=(window.location.href).split('/');
 switch (url_arr[4]){
-	case "modules": 
+	case u"modules": 
 		get(url_arr).then((o)=>render_content(o));
 		break;
-	case undefined:
+	case "":
 		let {Obj}=await import("https://learndev-student.github.io/VigyMat/web/main/home.js");
 		render_content(Obj);
+		break;
 	//default : render_
 };
 }
