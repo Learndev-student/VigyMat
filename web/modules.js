@@ -24,6 +24,7 @@ function reset(Obj){
 	container.innerHTML="";
 	let i;
 	let ele_arr=[];
+	console.log(obj);
 	for(i=0;i<obj.length;i++){
 		let input=document.createElement("input");
 		inp_arr[i]=input;
@@ -44,6 +45,8 @@ function reset(Obj){
 }
 async function load_module(str){
 	let Obj;
+	inp_arr=[];
+        functions=[];
 	let module= await import(`https://learndev-student.github.io/VigyMat/js/${str}.js`);
 	Obj=module.Obj;
 	console.log(Obj, "loadmodule()1");

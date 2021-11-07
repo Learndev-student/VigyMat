@@ -19,7 +19,9 @@ function render_content(obj){
 	});
 	d_links();
 	let l=document.getElementsByClassName("location")[0];
-	l.textContent=`${window.location.href.split('/')[4]}/${window.location.href.split('/')[5]}`;
+	let x;
+	if(window.location.href.split('/')[5]==undefined){ x="";}else{x=window.location.href.split('/')[5];}
+	l.textContent=`${window.location.href.split('/')[4]}/${x}`;
 }
 async function load_page(){
 var url_arr=(window.location.href).split('/');
