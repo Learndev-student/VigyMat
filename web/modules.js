@@ -25,6 +25,9 @@ function reset(Obj){
 	let i;
 	let ele_arr=[];
 	console.log(obj);
+	if(typeof obj=="Array"){
+		return Obj;
+	}else{
 	for(i=0;i<obj.length;i++){
 		let input=document.createElement("input");
 		inp_arr[i]=input;
@@ -42,6 +45,7 @@ function reset(Obj){
 	ele_arr.push(submit);
 	Obj.content[Obj.calc]=ele_arr;
 	return Obj;
+	}
 }
 async function load_module(str){
 	let Obj;
