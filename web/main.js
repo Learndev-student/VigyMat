@@ -26,7 +26,7 @@ switch (url_arr[4]){
 		get(url_arr).then((o)=>render_content(o));
 		break;
 	case undefined:
-		let {Obj}=await import("https://learndev-student.github.io/VigyMat/web/main/home.js";
+		let {Obj}=await import("https://learndev-student.github.io/VigyMat/web/main/home.js");
 		render_content(Obj);
 	//default : render_
 };
