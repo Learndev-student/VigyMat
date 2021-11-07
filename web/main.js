@@ -25,7 +25,7 @@ switch (url_arr[4]){
 	case "modules": 
 		get(url_arr).then((o)=>render_content(o));
 		break;
-	case undefined:
+	case "":
 		let {Obj}=await import("https://learndev-student.github.io/VigyMat/web/main/home.js");
 		render_content(Obj);
 	//default : render_
