@@ -1,8 +1,4 @@
 import {get} from "https://learndev-student.github.io/VigyMat/web/modules.js";
-const data={
-	"js":"/VigyMat/modules",
-	"":"/VigyMat/web/main/"
-};
 function render_content(obj){
 	let app=document.getElementById("app");
 	app.innerHTML="";
