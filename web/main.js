@@ -18,6 +18,8 @@ function render_content(obj){
 		app.appendChild(box);
 	});
 	d_links();
+	let l=document.getElementsByClassName("location")[0];
+	l.textContent=`${window.location.href.split('/')[4]}/${window.location.href.split('/')[5]}`;
 }
 async function load_page(){
 var url_arr=(window.location.href).split('/');
@@ -26,7 +28,7 @@ switch (url_arr[4]){
 		get(url_arr).then((o)=>render_content(o));
 		break;
 	case undefined:
-		let {Obj}=await import("https://learndev-student.github.io/VigyMat/web/main/home.js";
+		let {Obj}=await import("https://learndev-student.github.io/VigyMat/web/main/home.js");
 		render_content(Obj);
 	//default : render_
 };
@@ -43,4 +45,6 @@ function d_links(){
 }
 }
 d_links();
-window.onpopstate=()=>load_page();
+window.onpopstate=()=>{
+	load_page();
+};
