@@ -9,7 +9,7 @@ export const Obj={
 	description:"A test module just for testing, You know!",
 	calc: 1,
 	headings:["About","Calculate","Algorithm"],
-	content:["Hello World!, here the about is written.",obj,"Some algorithms"]
+	content:["This is just a testing module to test the site.",obj,"The algorithm is just simple.If you enter x (in input1) you will get 5x or vice-vers. It is just simple nothing to worry!."]
 };
 function test_input1(arr){
 	return arr[0]*5;
