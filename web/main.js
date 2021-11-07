@@ -1,6 +1,7 @@
 import {get} from "https://learndev-student.github.io/VigyMat/web/modules.js";
 function render_content(obj){
 	let app=document.getElementById("app");
+	document.getElementsByTagName("title")[0].textContent=obj.title;
 	app.innerHTML="";
 	let n=0;
 	obj["headings"].forEach((i)=>{

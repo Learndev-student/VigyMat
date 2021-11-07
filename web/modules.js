@@ -25,7 +25,7 @@ function reset(Obj){
 	let i;
 	let ele_arr=[];
 	console.log(obj);
-	if(typeof obj=="Array"){
+	if(Obj.loaded){
 		return Obj;
 	}else{
 	for(i=0;i<obj.length;i++){
@@ -44,6 +44,7 @@ function reset(Obj){
 	submit.onclick=()=>calculate();
 	ele_arr.push(submit);
 	Obj.content[Obj.calc]=ele_arr;
+	Obj.loaded=true;
 	return Obj;
 	}
 }
@@ -74,7 +75,6 @@ async function get(arr){
 	let Obj;
 	for(n=0;n<modules.length;n++){
 		if(modules.urls[n]==arr[5]){
-			document.getElementsByTagName("title")[0].textContent=modules.titles[n];
 			Obj=await load_module(arr[5]);
 			break;
 		}

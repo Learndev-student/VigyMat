@@ -4,6 +4,8 @@ const obj = {
 	type:["number","number"]
 };
 export const Obj={
+	title:"Test Module",
+	loaded:false,
 	description:"A test module just for testing, You know!",
 	calc: 1,
 	headings:["About","Calculate","Algorithm"],
