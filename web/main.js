@@ -31,12 +31,12 @@ switch (url_arr[4]){
 		get(url_arr).then((o)=>render_content(o));
 		break;
 	case "":
-		let {Obj}=await import("https://learndev-student.github.io/VigyMat/web/main/home.js");
-		render_content(Obj);
+		{let {Obj}=await import("https://learndev-student.github.io/VigyMat/web/main/home.js");
+		render_content(Obj);}
 		break;
 	default :
-		let {Obj}= await import("https://learndev-student.github.io/VigyMat/web/main/404.js");
-		render_content(Obj);
+		{let {obj}= await import("https://learndev-student.github.io/VigyMat/web/main/404.js");
+		render_content(obj);}
 };
 }
 load_page();
