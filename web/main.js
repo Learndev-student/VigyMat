@@ -24,7 +24,7 @@ function render_content(obj){
 async function load_page(){
 var url_arr=(window.location.href).split('/');
 switch (url_arr[4]){
-	case u"modules": 
+	case "modules": 
 		get(url_arr).then((o)=>render_content(o));
 		break;
 	case "":
