@@ -34,7 +34,9 @@ switch (url_arr[4]){
 		let {Obj}=await import("https://learndev-student.github.io/VigyMat/web/main/home.js");
 		render_content(Obj);
 		break;
-	//default : render_
+	default :
+		let {Obj}= await import("https://learndev-student.github.io/VigyMat/web/main/404.js");
+		render_content(Obj);
 };
 }
 load_page();
