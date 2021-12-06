@@ -1,7 +1,9 @@
 const data={
         "languages":1,
         "js":{
-        	"length":1,                                           "titles":["Test Module"],                             "urls":["test"]
+        	"length":1,
+		"titles":["Test Module"],
+		"urls":["test"]
         }
 };
 const modules=data['js'];
@@ -12,10 +14,18 @@ function calculate(i){
 	let n=0;
 	let m=-1;
 	inp_arr.forEach((i)=>{
-		if(i.value!=""){ inputs[n++]=i.value;
-		}else{ m=i.name;}
-	});
-	if(m!=-1){inp_arr[m].value=functions[m](inputs);
+		if(i.value!=""){ 
+			inputs[n++]=i.value;
+		}else{ 
+			m=i.name;
+		}
+	}
+	);
+	//trying to  give multiple outputs
+	if(m!=-1){
+		let ans_arr=functions[m](inputs);
+		let a=0;
+		ans_arr.forEach((n)=>inp_arr[a].value=n[a++]);
 	}
 }
 function reset(Obj){
