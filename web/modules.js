@@ -26,6 +26,7 @@ function calculate(){
 	if(a in list){
 		ans=functions[list.indexOf(a)](inp_arr);
 	}
+	console.log("check",a,list,ans);
 	let n=0;
 	inp_arr.forEach((i)=>i.value=ans[n++]);
 }
