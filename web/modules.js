@@ -9,24 +9,25 @@ const data={
 const modules=data['js'];
 var functions;
 var inp_arr=[];
-function calculate(i){
-	let inputs=[];
-	let n=0;
-	let m=-1;
+var list;
+//creating the selection function so that the user would be able to select the required outputs and inputs
+function calculate(){
+	//first to re-create the algorithm so that we have a more open and wide use with minimal code
+	////needs to be removed
+	let a=[];
+	let ans;
 	inp_arr.forEach((i)=>{
-		if(i.value!=""){ 
-			inputs[n++]=i.value;
-		}else{ 
-			m=i.name;
+		if(i!=""){
+			a.push(1);
+		}else{
+			a.push(0);
 		}
 	}
-	);
-	//trying to  give multiple outputs
-	if(m!=-1){
-		let ans_arr=functions[m](inputs);
-		let a=0;
-		ans_arr.forEach((n)=>inp_arr[a].value=n[a++]);
+	if(a in list){
+		ans=functions[list.indexof(a)](inp_arr);
 	}
+	let n=0;
+	inp_arr.forEach((i)=>i.value=ans[n++]);
 }
 function reset(Obj){
 	let obj=Obj.content[Obj.calc];
@@ -45,14 +46,15 @@ function reset(Obj){
 		input.type=obj.type[i];
 		input.name=i;
 		input.className="inputs";
+		input.onchange=()=calculate();
 		ele_arr.push(input);
 	}
-	let submit=document.createElement("input");
-	submit.type="submit";
-	submit.value="SUBMIT";
-	submit.className="submit";
-	submit.onclick=()=>calculate();
-	ele_arr.push(submit);
+	//let submit=document.createElement("input");
+	//submit.type="submit";
+	//submit.value="SUBMIT";
+	//submit.className="submit";
+	//submit.onclick=()=>calculate();
+	//ele_arr.push(submit);
 	Obj.content[Obj.calc]=ele_arr;
 	Obj.loaded=true;
 	return Obj;
@@ -64,6 +66,7 @@ async function load_module(str){
         functions=[];
 	let module= await import(`https://learndev-student.github.io/VigyMat/js/${str}.js`);
 	Obj=module.Obj;
+	list=module.list;
 	functions=module.functions;
 	Obj=reset(Obj);
 	console.log(`${str} module loaded`);
@@ -75,7 +78,7 @@ function module_not_found(){
 	let Obj={
 		description:"404",
 		headings:["404!"],
-		content:[`<h3>Sorry!,</h3><p>The page ${str} not found.</p>`]
+		content:[`<h3>Sorry! ,</h3><p>The page ${str} not found. You may check the <a class="d_link" href="https://learndev-student.github.io/VigyMat">Homepage</a>`]
 	};
 	return Obj;
 }

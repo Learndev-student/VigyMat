@@ -1,6 +1,6 @@
 export const Obj={
 	title:"Home",
-	description:"Home page",
+	description:"Home Page",
 	headings:["About","Why?"],
-	content:["Hello World!, here the about is written.","Need to edit Sorry. Ok until then you might like to visit <a href='/VigyMat/modules/test' class='d_link'>Test Module</a>"]
+	content:["<p>The \"Open-source project\" <b>VigyMat</b>, is just an initiative to just make the world of complex scientific and mathematical calculations easy to you.</p>","It has started just with my hobby of coding. Well, it has not yet completed its base structure"]
 };
