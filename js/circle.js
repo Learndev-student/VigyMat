@@ -1,5 +1,4 @@
 const obj = {
-	length:2,
 	placeholders:["radius","area","circumference"],
 	type:["number","number","number"]
 };

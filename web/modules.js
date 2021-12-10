@@ -25,10 +25,10 @@ function calculate(){
 	});
 	if(a in list){
 		ans=functions[list.indexOf(a)](inp_arr);
+		console.log("check",a,list,ans);
+		let n=0;
+		inp_arr.forEach((i)=>i.value=ans[n++]);
 	}
-	console.log("check",a,list,ans);
-	let n=0;
-	inp_arr.forEach((i)=>i.value=ans[n++]);
 }
 function reset(Obj){
 	let obj=Obj.content[Obj.calc];
@@ -40,7 +40,7 @@ function reset(Obj){
 	if(Obj.loaded){
 		return Obj;
 	}else{
-	for(i=0;i<obj.length;i++){
+	for(i=0;i<obj.placeholders.length;i++){
 		let input=document.createElement("input");
 		inp_arr[i]=input;
 		input.placeholder=obj.placeholders[i];
