@@ -46,7 +46,7 @@ function reset(Obj){
 		input.type=obj.type[i];
 		input.name=i;
 		input.className="inputs";
-		input.onchange=()=calculate();
+		input.onchange=()=>calculate();
 		ele_arr.push(input);
 	}
 	//let submit=document.createElement("input");
