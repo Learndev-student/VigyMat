@@ -22,7 +22,7 @@ function calculate(){
 		}else{
 			a.push(0);
 		}
-	}
+	});
 	if(a in list){
 		ans=functions[list.indexof(a)](inp_arr);
 	}
