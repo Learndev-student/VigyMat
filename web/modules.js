@@ -15,7 +15,7 @@ function calculate(){
 	//first to re-create the algorithm so that we have a more open and wide use with minimal code
 	////needs to be removed
 	let a=[];
-	let ans;
+	let ans=[];
 	inp_arr.forEach((i)=>{
 		if(i!=""){
 			a.push(1);
@@ -24,7 +24,7 @@ function calculate(){
 		}
 	});
 	if(a in list){
-		ans=functions[list.indexof(a)](inp_arr);
+		ans=functions[list.indexOf(a)](inp_arr);
 	}
 	let n=0;
 	inp_arr.forEach((i)=>i.value=ans[n++]);
