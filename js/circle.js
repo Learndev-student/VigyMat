@@ -14,11 +14,11 @@ function f0(e_arr){
 	let arr=[e_arr[0].value,e_arr[1].value,e_arr[2].value];
 	return [arr[0],arr[0]*Math.PI*2,arr[0]*arr[0]*Math.PI];
 }
-function f1(arr){
+function f1(e_arr){
 	let arr=[e_arr[0].value,e_arr[1].value,e_arr[2].value];
 	return [Math.sqrt(arr[1]/Math.PI),Math.sqrt(arr[1]/Math.PI)*Math.PI*2];
 }
-function f2(arr){
+function f2(e_arr){
 	let arr=[e_arr[0].value,e_arr[1].value,e_arr[2].value];
 	let r=arr[2]/(Math.PI*2);
 	return [r,Math.PI*r*r,arr[2]];
