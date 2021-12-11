@@ -59,12 +59,6 @@ function reset(Obj){
 		input.oninput=()=>calculate();
 		ele_arr.push(input);
 	}
-	//let submit=document.createElement("input");
-	//submit.type="submit";
-	//submit.value="SUBMIT";
-	//submit.className="submit";
-	//submit.onclick=()=>calculate();
-	//ele_arr.push(submit);
 	Obj.content[Obj.calc]=ele_arr;
 	Obj.loaded=true;
 	return Obj;
