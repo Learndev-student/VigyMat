@@ -11,23 +11,32 @@ var functions;
 var inp_arr=[];
 var list;
 //creating the selection function so that the user would be able to select the required outputs and inputs
+function arraysEqual(a, b) {
+	  if (a === b) return true;
+	  if (a == null || b == null) return false;
+	  if (a.length !== b.length) return false;
+	  for (var i = 0; i < a.length; ++i) {
+             if (a[i] !== b[i]) return false;
+	  }         return true;
+}
 function calculate(){
 	//first to re-create the algorithm so that we have a more open and wide use with minimal code
 	////needs to be removed
 	let a=[];
 	let ans=[];
 	inp_arr.forEach((i)=>{
-		if(i!=""){
+		if(i.value!=""){
 			a.push(1);
 		}else{
 			a.push(0);
 		}
 	});
-	if(a in list){
-		ans=functions[list.indexOf(a)](inp_arr);
-		console.log("check",a,list,ans);
-		let n=0;
-		inp_arr.forEach((i)=>i.value=ans[n++]);
+	for(let n=0;n<list.length;n++){
+		if(arraysEqual(a,list[n])){
+			ans=functions[n](inp_arr);
+			n=0;
+			inp_arr.forEach((i)=>i.value=ans[n++]);
+		}
 	}
 }
 function reset(Obj){
@@ -47,7 +56,7 @@ function reset(Obj){
 		input.type=obj.type[i];
 		input.name=i;
 		input.className="inputs";
-		input.onchange=()=>calculate();
+		input.oninput=()=>calculate();
 		ele_arr.push(input);
 	}
 	//let submit=document.createElement("input");
