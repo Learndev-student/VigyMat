@@ -11,17 +11,17 @@ export const Obj={
 	content:["This is again a testing module. But this time with circles, trying to get multiple output from single inpiut and more.",obj,"Here the problem is to give multiple outputs from a single input in a combination."]
 };
 function f0(e_arr){
-	let arr=[e_arr[0].value,e_arr[1].value,e_arr[2].value];
-	return [arr[0],arr[0]*Math.PI*2,arr[0]*arr[0]*Math.PI];
+	let arr=[e_arr[0].value, e_arr[1].value, e_arr[2].value];
+	return [arr[0], arr[0]*Math.PI*2, arr[0]*arr[0]*Math.PI];
 }
 function f1(e_arr){
-	let arr=[e_arr[0].value,e_arr[1].value,e_arr[2].value];
-	return [Math.sqrt(arr[1]/Math.PI),Math.sqrt(arr[1]/Math.PI)*Math.PI*2];
+	let arr=[e_arr[0].value, e_arr[1].value, e_arr[2].value];
+	return [Math.sqrt(arr[1]/Math.PI), Math.sqrt(arr[1]/Math.PI)*Math.PI*2, arr[2]];
 }
 function f2(e_arr){
-	let arr=[e_arr[0].value,e_arr[1].value,e_arr[2].value];
+	let arr=[e_arr[0].value, e_arr[1].value, e_arr[2].value];
 	let r=arr[2]/(Math.PI*2);
-	return [r,Math.PI*r*r,arr[2]];
+	return [r, Math.PI*r*r, arr[2]];
 }
-export const list=[[1,0,0],[0,1,0],[0,0,1]];
+export const list=[[1,0,0], [0,1,0], [0,0,1]];
 export const functions=[f0,f1,f2];
