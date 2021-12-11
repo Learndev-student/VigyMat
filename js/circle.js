@@ -12,11 +12,13 @@ export const Obj={
 };
 function f0(e_arr){
 	let arr=[e_arr[0].value, e_arr[1].value, e_arr[2].value];
-	return [arr[0], arr[0]*Math.PI*2, arr[0]*arr[0]*Math.PI];
+	let r=arr[0];
+	return [r, r*Math.PI*2, r*r*Math.PI];
 }
 function f1(e_arr){
 	let arr=[e_arr[0].value, e_arr[1].value, e_arr[2].value];
-	return [Math.sqrt(arr[1]/Math.PI), Math.sqrt(arr[1]/Math.PI)*Math.PI*2, arr[2]];
+	let r=Math.sqrt(arr[1]/Math.PI);
+	return [r, arr[1], 2*Math.PI*r];
 }
 function f2(e_arr){
 	let arr=[e_arr[0].value, e_arr[1].value, e_arr[2].value];
