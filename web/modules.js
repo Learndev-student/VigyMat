@@ -34,8 +34,10 @@ function calculate(){
 	for(let n=0;n<list.length;n++){
 		if(arraysEqual(a,list[n])){
 			ans=functions[n](inp_arr);
-			n=0;
-			inp_arr.forEach((i)=>i.value=ans[n++]);
+			let m=0;
+			inp_arr.forEach((i)=>{
+				if(m!=n) i.value=ans[m++];
+			});
 		}
 	}
 }
@@ -56,7 +58,8 @@ function reset(Obj){
 			input.type=obj.type[i];
 			input.name=i;
 			input.className="inputs";
-			input.oninput=()=>calculate();
+			input.oninput=calculate;
+			input.onchange=calculate;
 			ele_arr.push(input);
 		}
 		let clear=document.createElement("input");
