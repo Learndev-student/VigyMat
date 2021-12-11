@@ -49,19 +49,27 @@ function reset(Obj){
 	if(Obj.loaded){
 		return Obj;
 	}else{
-	for(i=0;i<obj.placeholders.length;i++){
-		let input=document.createElement("input");
-		inp_arr[i]=input;
-		input.placeholder=obj.placeholders[i];
-		input.type=obj.type[i];
-		input.name=i;
-		input.className="inputs";
-		input.oninput=()=>calculate();
-		ele_arr.push(input);
-	}
-	Obj.content[Obj.calc]=ele_arr;
-	Obj.loaded=true;
-	return Obj;
+		for(i=0;i<obj.placeholders.length;i++){
+			let input=document.createElement("input");
+			inp_arr[i]=input;
+			input.placeholder=obj.placeholders[i];
+			input.type=obj.type[i];
+			input.name=i;
+			input.className="inputs";
+			input.oninput=()=>calculate();
+			ele_arr.push(input);
+		}
+		let clear=document.createElement("input");
+		clear.type="button";
+		clear.value="Clear";
+		clear.id="clear";
+		clear.onclick=()=>{
+			inp_arr.forEach((i)=>i.value="");
+		};
+		ele_arr.push(clear);
+		Obj.content[Obj.calc]=ele_arr;
+		Obj.loaded=true;
+		return Obj;
 	}
 }
 async function load_module(str){
