@@ -1,7 +1,7 @@
 const data={
         "languages":1,
         "js":{
-        	"length":2,
+        	"length":3,
 		"titles":["Test Module","Circle","Cube"],
 		"urls":["Misc/test","Misc/circle","Misc/cube"]
         }
