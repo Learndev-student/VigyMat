@@ -2,8 +2,8 @@ const data={
         "languages":1,
         "js":{
         	"length":2,
-		"titles":["Test Module","Circle"],
-		"urls":["Misc/test","Misc/circle"]
+		"titles":["Test Module","Circle","Cube"],
+		"urls":["Misc/test","Misc/circle","Misc/cube"]
         }
 };
 const modules=data['js'];
