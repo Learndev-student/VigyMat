@@ -36,8 +36,10 @@ function calculate(){
 			ans=functions[n](inp_arr);
 			let m=0;
 			inp_arr.forEach((i)=>{
-				if(m!=n) i.value=ans[m++];
+				if(m!=n) i.value=ans[m];
+				m++;
 			});
+			break;
 		}
 	}
 }
