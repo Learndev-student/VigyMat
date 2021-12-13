@@ -10,7 +10,6 @@ const modules=data['js'];
 var functions;
 var inp_arr=[];
 var list;
-//creating the selection function so that the user would be able to select the required outputs and inputs
 function arraysEqual(a, b) {
 	  if (a === b) return true;
 	  if (a == null || b == null) return false;
@@ -20,8 +19,6 @@ function arraysEqual(a, b) {
 	  }         return true;
 }
 function calculate(){
-	//first to re-create the algorithm so that we have a more open and wide use with minimal code
-	////needs to be removed
 	let a=[];
 	let ans=[];
 	inp_arr.forEach((i)=>{
@@ -88,7 +85,7 @@ async function load_module(str){
 	let Obj;
 	inp_arr=[];
         functions=[];
-	let module= await import(`https://learndev-student.github.io/VigyMat/js/${str}.js`);
+	let module= await import(`https://learndev-student.github.io/VigyMat/web/js/${str}.js`);
 	Obj=module.Obj;
 	list=module.list;
 	functions=module.functions;
