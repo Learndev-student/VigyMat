@@ -3,7 +3,7 @@ const data={
         "js":{
         	"length":2,
 		"titles":["Test Module","Circle"],
-		"urls":["test","circle"]
+		"urls":["Misc/test","Misc/circle"]
         }
 };
 const modules=data['js'];
