@@ -1,5 +1,5 @@
 const obj = {
-	placeholders:["radius","circumference", "area"];
+	placeholders:["radius","circumference", "area"],
 	type:["number","number","number"]
 };
 export const Obj={
