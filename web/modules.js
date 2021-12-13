@@ -25,7 +25,7 @@ function calculate(){
 	let a=[];
 	let ans=[];
 	inp_arr.forEach((i)=>{
-		if(i.value!=""){
+		if(i.dataset.io=="input"){
 			a.push(1);
 		}else{
 			a.push(0);
@@ -60,6 +60,10 @@ function reset(Obj){
 			input.type=obj.type[i];
 			input.name=i;
 			input.className="inputs";
+			input.dataset.io="output";
+			input.onclick=(i)=>{
+				i.srcElement.dataset.io="input";
+			}
 			input.oninput=calculate;
 			input.onchange=calculate;
 			ele_arr.push(input);
@@ -69,7 +73,10 @@ function reset(Obj){
 		clear.value="Clear";
 		clear.id="clear";
 		clear.onclick=()=>{
-			inp_arr.forEach((i)=>i.value="");
+			inp_arr.forEach((i)=>{
+				i.value="";
+				i.dataset.io="output";
+			});
 		};
 		ele_arr.push(clear);
 		Obj.content[Obj.calc]=ele_arr;
