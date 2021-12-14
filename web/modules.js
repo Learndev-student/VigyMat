@@ -109,7 +109,9 @@ async function get(arr){
 	let a="";
 	arr.forEach( i =>{
 		if(arr.indexOf(i)>=5) a+=i;
+		console.log(a);
 	});
+	console.log(modules.urls);
 	for(n=0;n<modules.length;n++){
 		if(modules.urls[n]==a){
 			Obj=await load_module(a);
