@@ -108,7 +108,7 @@ async function get(arr){
 	let Obj;
 	let a="";
 	arr.forEach( i =>{
-		if(arr.indexOf(i)>=5) a+=i;
+		if(arr.indexOf(i)>=5) a+=`/`+i;
 		console.log(a);
 	});
 	console.log(modules.urls);
