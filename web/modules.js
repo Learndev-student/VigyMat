@@ -3,7 +3,7 @@ const data={
         "js":{
         	"length":3,
 		"titles":["Test Module","Circle","Cube"],
-		"urls":["Misc/test","Misc/circle","Misc/cube"]
+		"urls":["/Misc/test","/Misc/circle","/Misc/cube"]
         }
 };
 const modules=data['js'];
@@ -85,7 +85,7 @@ async function load_module(str){
 	let Obj;
 	inp_arr=[];
         functions=[];
-	let module= await import(`https://learndev-student.github.io/VigyMat/web/js/${str}.js`);
+	let module= await import(`https://learndev-student.github.io/VigyMat/web/js${str}.js`);
 	Obj=module.Obj;
 	list=module.list;
 	functions=module.functions;
