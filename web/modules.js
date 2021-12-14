@@ -106,9 +106,11 @@ function module_not_found(){
 async function get(arr){
 	let n;
 	let Obj;
+	let a="";
+	arr.forEach( i => if(arr.indexOf(i)>=5) a+=i);
 	for(n=0;n<modules.length;n++){
-		if(modules.urls[n]==arr[5]){
-			Obj=await load_module(arr[5]);
+		if(modules.urls[n]==a){
+			Obj=await load_module(a);
 			break;
 		}
 	}
