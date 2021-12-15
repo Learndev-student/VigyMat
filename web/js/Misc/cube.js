@@ -12,27 +12,27 @@ export const Obj={
 };
 function f0(e_arr){
 	let l=e_arr[0].value;
-	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l);, math.sqrt(3*l*l)];
+	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l), math.sqrt(3*l*l)];
 }
 function f1(e_arr){
 	let l=Math.sqrt(e_arr[1].value/6);
-	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l);, math.sqrt(3*l*l)];
+	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l), math.sqrt(3*l*l)];
 }
 function f2(e_arr){
 	let l=Math.sqrt(e_arr[2].value/4);
-	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l);, math.sqrt(3*l*l)];
+	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l), math.sqrt(3*l*l)];
 }
 function f3(e_arr){
 	let l=Math.pow(e_arr[3].value,1/3);
-	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l);, math.sqrt(3*l*l)];
+	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l), math.sqrt(3*l*l)];
 }
 function f4(e_arr){
 	let l=Math.sqrt(Math.pow(e_arr[5].value,2)/2);
-	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l);, math.sqrt(3*l*l)];
+	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l), math.sqrt(3*l*l)];
 }
 function f5(e_arr){
 	let l=Math.sqrt(Math.pow(e_arr[0].value,2)/3);
-	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l);, math.sqrt(3*l*l)];
+	return [l, 6*l*l, 4*l*l, l*l*l, math.sqrt(2*l*l), math.sqrt(3*l*l)];
 }
 
 export const list=[[1,0,0,0,0,0], [0,1,0,0,0,0], [0,0,1,0,0,0], [0,0,0,1,0,0], [0,0,0,0,1,0],[0,0,0,0,0,1]];

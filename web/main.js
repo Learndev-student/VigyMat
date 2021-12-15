@@ -1,4 +1,7 @@
+//Importing get() from modules.js to import additional modules - that is the dynamic pages scripts
 import {get} from "https://learndev-student.github.io/VigyMat/web/modules.js";
+
+//Content renderer
 function render_content(obj){
 	let app=document.getElementById("app");
 	document.getElementsByTagName("title")[0].textContent=obj.title;
@@ -24,6 +27,8 @@ function render_content(obj){
 	if(window.location.href.split('/')[5]==undefined){ x="";}else{x=window.location.href.split('/')[5];}
 	l.textContent=`${window.location.href.split('/')[4]}/${x}`;
 }
+
+//An async function to load the modules
 async function load_page(){
 var url_arr=(window.location.href).split('/');
 switch (url_arr[4]){
@@ -39,6 +44,8 @@ switch (url_arr[4]){
 		render_content(Obj);}
 };
 }
+
+//Initialising so that the current required module can be loaded
 load_page();
 function d_links(){
 	let links=document.getElementsByClassName('d_link');

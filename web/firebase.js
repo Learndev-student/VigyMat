@@ -1,3 +1,6 @@
+//FIREBASE SERVICE SCRIPT
+//
+//DON'T CHANGE!
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js";
 import { getPerformance } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-performance.js";
