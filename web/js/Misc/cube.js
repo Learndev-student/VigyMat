@@ -1,6 +1,6 @@
 const obj = {
 	placeholders:["length","total surface area","lateral SA","volume", "diagonal length(2D)", "diagonal length(3D)"],
-	type:["number","number","number","number","number","number"];
+	type:["number","number","number","number","number","number"]
 };
 export const Obj={
 	title:"Cube",
