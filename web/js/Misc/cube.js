@@ -12,7 +12,7 @@ export const Obj={
 };
 function f0(e_arr){
 	let l=e_arr[0].value;
-
+	return [l, 6*l*l, 4*l*l, l*l*l, Math.sqrt(2*l*l), Math.sqrt(3*l*l)];
 }
 function f1(e_arr){
 	let l=Math.sqrt(e_arr[1].value/6);
@@ -27,11 +27,11 @@ function f3(e_arr){
 	return [l, 6*l*l, 4*l*l, l*l*l, Math.sqrt(2*l*l), Math.sqrt(3*l*l)];
 }
 function f4(e_arr){
-	let l=Math.sqrt(Math.pow(e_arr[5].value,2)/2);
+	let l=Math.sqrt(Math.pow(e_arr[4].value,2)/2);
 	return [l, 6*l*l, 4*l*l, l*l*l, Math.sqrt(2*l*l), Math.sqrt(3*l*l)];
 }
 function f5(e_arr){
-	let l=Math.sqrt(Math.pow(e_arr[0].value,2)/3);
+	let l=Math.sqrt(Math.pow(e_arr[5].value,2)/3);
 	return [l, 6*l*l, 4*l*l, l*l*l, Math.sqrt(2*l*l), Math.sqrt(3*l*l)];
 }
 
