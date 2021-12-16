@@ -1,20 +1,5 @@
 //Const data for the list of modules
-const data = {
-        "languages" : 1,
-        "js" : {
-        	"length" : 3,
-		"titles" : [ 
-			"Test Module" ,
-			"Circle" ,
-			"Cube" 
-		] ,
-		"urls" : [ 
-			"/Misc/test" ,
-			"/Misc/circle" ,
-			"/Misc/cube" 
-		]
-        }
-};
+import { data } from "https://learndev-student.github.io/VigyMat/data.js";
 
 //Selecting js modules for web pages
 const modules = data['js'];
