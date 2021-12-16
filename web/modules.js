@@ -102,18 +102,10 @@ async function load_module( str ) {
 }
 
 //What if the module is not present? Here the thing to do
-function module_not_found() {
+async function module_not_found() {
 	let url_arr = window.location.href.split('/');
 	let str = `${url_arr[4]}/${url_arr[5]}`;
-	let Obj = { 
-		description:"404" ,
-		headings:[
-			"404!"
-		] ,
-		content:[
-			`<h3>Sorry! ,</h3><p>The page ${str} not found. You may check the <a class="d_link" href="https://learndev-student.github.io/VigyMat">Homepage</a>`
-		]
-	};
+	let Obj = await import("https://la=earndev-student.github.io/VigyMat/web/main/404.js");
 	return Obj;
 }
 

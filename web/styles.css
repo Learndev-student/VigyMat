@@ -5,7 +5,7 @@
 	text-align: center;
 	text-shadow: 2px, 3px ,2px, lightblue;
 	background: linear-gradient(to right bottom, purple, lightblue);
-	border : 1px, bold, black;
+	border : 1px bold black;
 	padding-top: 6px;
 	padding-left: 10px;
 	padding-bottom: 6px;
@@ -20,7 +20,8 @@
 }
 #app .box {
 	background: linear-gradient(to right bottom, white, lightgrey);
-	border: 3px, dashed, purple;
+	border: 3px dashed #067bfd36;
+	padding-left: 8px;
 	border-radius: 10px;
 	word-wrap: break-word;
 	overflow: auto;
@@ -31,6 +32,9 @@
 	color: black;
 	padding-top: 5px;
 	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 5px;
+	border-radius: 8px;
 	font-family: 'Montserrat', sans-serif;
 	background: linear-gradient(to right bottom, lightgrey, white);
 }
