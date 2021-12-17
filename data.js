@@ -20,6 +20,10 @@ export const data = {
 					"Cube" 
 				] ,
 				"length" : 2
+			} ,
+			{
+				"Trigonometry" : [] ,
+				"length" : 0
 			}
 		]
 	}
