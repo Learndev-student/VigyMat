@@ -6,7 +6,7 @@ for ( let n=0 ; n < sub.length ; n++){
 	a += `<p>${sub[n]}</p><ul class='d_ul'>`;
 	let titles = modules.content[n][sub[n]];
 	titles.forEach( i =>{
-		a += `<li><a class="d_link" href='/VigyMat/modules/${sub[n]}/${i}'>${i}</a></li>`;
+		a += `<li><a class="d_link" href='/VigyMat/modules/${sub[n]}/${i.toLowerCase()}'>${i}</a></li>`;
 	});
 	a += `</ul>`;
 }
