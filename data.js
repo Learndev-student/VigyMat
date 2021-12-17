@@ -22,4 +22,5 @@ export const data = {
 				"length" : 2
 			}
 		]
-};
+	}
+}
