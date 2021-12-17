@@ -22,6 +22,7 @@
 	background: linear-gradient(to right bottom, white, lightgrey);
 	border: 3px dashed #067bfd36;
 	padding-left: 8px;
+	padding-bottom: 10px;
 	border-radius: 10px;
 	word-wrap: break-word;
 	overflow: auto;
