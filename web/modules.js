@@ -119,8 +119,9 @@ async function get( arr ) {
 		console.log(a);
 	});
 	console.log(modules.urls);
-	for( n=0 ; n<modules.length ; n++ ) {
-		if( modules.urls[n] == a ){
+	for( n=0 ; n < modules.length ; n++ ) {
+		modules.content.sub.forE
+		if( url == a ){
 			Obj = await load_module(a);
 			break;
 		}
