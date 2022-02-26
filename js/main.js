@@ -55,7 +55,7 @@ function show_err( err )
 {
 	let p = document.createElement('p');
 	p.className = 'error' ;
-	p.innerHTML = `${err.name} : ${err.message}`) ;
+	p.innerHTML = `${err.name} : ${err.message}` ;
 	app.appendChild(p) ;
 }
 window.onpopstate = () => reload() ;
