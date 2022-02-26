@@ -62,7 +62,7 @@ window.onpopstate = () => reload() ;
 reload() ;
 worker.onmessage = ( m ) =>
 {
-	switch m.data.type
+	switch (m.data.type)
 	{
 		case 'html_data' : render( m.data.content ) ;
 				break;
