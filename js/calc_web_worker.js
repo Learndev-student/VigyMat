@@ -28,12 +28,10 @@ function d_import (url)
 	try{
 		let str = url.replace("https://learndev-student.github.io/VigyMat",'') ;
 		if (str == '/') str = '/index' ;
-		import(`https://learndev-student.github.io/VigyMat/js${str}.js`).then( m =>
-			{
-				Message('html_data', module.html ) ;
-				functions = module.functions;
-				list = module.list;
-			} ) ;
+		importScripts(`https://learndev-student.github.io/VigyMat/js${str}.js`) ;
+		Message('html_data', self.html ) ;
+		functions = self.f;
+		list;
 	}catch(error)
 	{
 	postErr( error.name , error.message) ;
