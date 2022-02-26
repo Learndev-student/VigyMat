@@ -1,6 +1,6 @@
 // Variable declarations
 
-var worker = new Worker('/VigyMat/js/calc_web_worker.js');
+var worker = new Worker('/VigyMat/js/calc_web_worker.js', { type:'module' });
 let app = document.getElementById('app') ;
 let module;
 
