@@ -85,7 +85,7 @@ onmessage = ( Obj ) =>
 					break;
 			default : postErr('Invalid message' , "");
 		}
-	}catch(err) => 
+	}catch(err)
 	{
 		postErr(err.name,err.message);
 	}

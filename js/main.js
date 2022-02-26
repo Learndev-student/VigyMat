@@ -29,7 +29,6 @@ function render ( arr )
 			app.appendChild(box) ;
 		} ) ;
 }
-		history.pushState({},'',url) ;
 
 // Dynamic links
 function d_links ()
@@ -49,6 +48,7 @@ function reload()
 {
 	let url = window.location.href ;
 	worker.postMessage( Message('import' , url) );
+	history.pushState({} , '' , url) ;
 }
 
 function show_err( err )
