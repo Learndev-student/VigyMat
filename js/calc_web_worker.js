@@ -28,6 +28,7 @@ function d_import (url)
 	try{
 		let str = url.replace("https://learndev-student.github.io/VigyMat",'') ;
 		if (str == '/') str = '/index' ;
+		//NEED TO ADD STATIC IMPORT
 		import(`https://learndev-student.github.io/VigyMat/js${str}.js`).then( m =>
 			{
 				Message('html_data', module.html ) ;

@@ -1,6 +1,7 @@
 // Variable declarations
 
 var worker = new Worker('/VigyMat/js/calc_web_worker.js', { type:'module' });
+//ADD IMPORTING TO main.js itself!!
 let app = document.getElementById('app') ;
 let module;
 
@@ -46,6 +47,9 @@ function d_links ()
 //Reloading
 function reload()
 {
+	//Reload reloads the worker for new script
+	if (worker!=null) worker.terminate();
+	worker = new Worker('/VigyMat/js/calc_web_worker.js', { type:'module' });
 	let url = window.location.href ;
 	worker.postMessage( Message('import' , url) );
 	history.pushState({} , '' , url) ;
