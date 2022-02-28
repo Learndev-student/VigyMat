@@ -23,24 +23,6 @@ function postErr( name , message )
 	} ) );
 }
 
-function d_import (url)
-{
-	try{
-		let str = url.replace("https://learndev-student.github.io/VigyMat",'') ;
-		if (str == '/') str = '/index' ;
-		//NEED TO ADD STATIC IMPORT
-		import(`https://learndev-student.github.io/VigyMat/js${str}.js`).then( m =>
-			{
-				Message('html_data', module.html ) ;
-				functions = module.functions;
-				list = module.list;
-			} ) ;
-	}catch(error)
-	{
-	postErr( error.name , error.message) ;
-	}
-}
-
 //Checks if two arrays are equal or not
 function arraysEqual( a, b ) {
 	if ( a === b ) return true;
@@ -80,7 +62,12 @@ onmessage = ( Obj ) =>
 	try {
 		switch (Obj.data['type'])
 		{
-			case 'import' : d_import( Obj.data['content'] );
+				//TO EDIT
+			case 'functions' : Obj.data['content']['functions'].forEach( str => {
+						functions.append(new Function('inputs' , str));
+			});
+					break;
+			case 'list' : list = Obj.data['content']['list'];
 					break;
 			case 'calculate' : calculate( Obj.data['content'] );
 					break;
