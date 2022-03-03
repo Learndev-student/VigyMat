@@ -12,6 +12,20 @@ function Message( type , content )
         };
 }
 
+function workersf( str )
+{
+	switch (str){
+		case 'calculate': let eles = documents.getElementsByClassName('input');
+			let inputs = [];
+			for(let i = 0; i<eles.length ; i++)
+			{
+				inputs[i] = {'val': eles[i].value , 'io':eles[i].dataset.io};
+			}
+			Message('calculate',inputs);
+			break;
+	}
+}
+
 function render ( arr )
 {
 	arr.forEach( i => 
@@ -42,7 +56,7 @@ async function d_import ( url )
 			let f_str = [];
 			module.functions.forEach( i =>
 				{
-					f_str.append(i);
+					f_str.append( `return ${i.toString()} ;`);
 				});
 			Message( 'functions' , f_str );
 			Message( 'list' , module.list );
@@ -84,7 +98,11 @@ worker.onmessage = ( m ) =>
 {
 	switch (m.data.type)
 	{
-		case 'values' : //Need to edit : ( m.data.content ) ;
+		case 'values' : let eles = document.getElementByClassName('input');
+			for( let i = 0; i<values.length ; i++)
+			{
+				eles[i].value = m.data.content[i];
+			}
 				break;
 		case 'error' : show_err( m.data.content ) ;
 				break;

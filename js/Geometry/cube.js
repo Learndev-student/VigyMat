@@ -1,12 +1,14 @@
-function say_hello()
-{
-	prompt("Hello!") ;
-}
-
 let html =
 	[
-		[ 'About' , `<p onclick="f['say_hello']()">Hello world</p>`],
-		[ 'something' , "hi"]
+		[ 'About' , `<p>Hello world</p>`],
+		[ 'Calculate Cube' , `<input type='num' class='input'><button onclick='workersf('calculate')' id='submit'>Calculate</button>`]
 	] ;
-let f = { 'say_hello' : say_hello } ;
-export { html , f }
+function f1 (inputs)
+{
+	return math.pow(inputs[0],3);
+}
+const list = [
+	[1,0],
+	[0,1]
+];
+export { html , functions ,list }

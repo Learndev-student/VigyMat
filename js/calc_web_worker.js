@@ -34,19 +34,21 @@ function arraysEqual( a, b ) {
 }
 
 //The calculate function to initialise the module functions according to the order of input and output elements
-function calculate(){
+function calculate( inputs ){
 	let a = [];
 	let ans = [];
+	let in_arr = [];
 	inputs.forEach( i => {
-		if( i.dataset.io == "input" ) {
+		if( i.io == "input" ) {
 			a.push(1);
 		} else {
 			a.push(0);
 		}
+		in_arr.push(i.val);
 	});
 	for( let n=0 ; n<list.length ; n++ ) {
 		if( arraysEqual(a,list[n]) ) {
-			ans = functions[n](inp_arr);
+			ans = functions[n](in_arr);
 			let m = 0;
 			inputs.forEach( i => {
 				if( m != n ) i.value = ans[m];
@@ -64,7 +66,7 @@ onmessage = ( Obj ) =>
 		{
 				//TO EDIT
 			case 'functions' : Obj.data['content']['functions'].forEach( str => {
-						functions.append(new Function('inputs' , str));
+						functions.append(new Function(str));
 			});
 					break;
 			case 'list' : list = Obj.data['content']['list'];

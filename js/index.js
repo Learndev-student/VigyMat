@@ -1,4 +1,9 @@
 let html = [
 	[ 'About' , "Hello World!" ]
 ] ;
-export { html }
+function f1 ()
+{
+	alert('Test Completed');
+}
+let functions = [f1];
+export { html , functions }
