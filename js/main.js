@@ -56,7 +56,7 @@ async function d_import ( url )
 			let f_str = [];
 			module.functions.forEach( i =>
 				{
-					f_str.append( `return ${i.toString()} ;`);
+					f_str.push( `return ${i.toString()} ;`);
 				});
 			Message( 'functions' , f_str );
 			Message( 'list' , module.list );
