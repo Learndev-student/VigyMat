@@ -11,4 +11,5 @@ const list = [
 	[1,0],
 	[0,1]
 ];
+let functions = [f1];
 export { html , functions ,list }
