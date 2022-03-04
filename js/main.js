@@ -70,7 +70,8 @@ function d_links ()
 	for ( let i = 0 ; i < links.length ; i++ )
 	{
 		links[i].onclick = ( event ) => {
-                        worker.postMessage( Message('import' , links[i].href ) ) ;
+                        d_import( url ) ;
+			history.pushState({} , '' , url);
                         event.preventDefault() ;
 		}
 	}
@@ -79,9 +80,7 @@ function d_links ()
 //Reloading
 function reload()
 {
-	//Reload reloads the worker for new script
 	let url = window.location.href ;
-	history.pushState({} , '' , url) ;
 	d_import( url ) ;
 }
 
