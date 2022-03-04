@@ -15,7 +15,7 @@ function Message( type , content )
 function workersf( str )
 {
 	switch (str){
-		case 'calculate': let eles = documents.getElementsByClassName('input');
+		case 'calculate': let eles = document.getElementsByClassName('input');
 			let inputs = [];
 			for(let i = 0; i<eles.length ; i++)
 			{
