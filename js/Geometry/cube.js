@@ -1,7 +1,7 @@
 let html =
 	[
 		[ 'About' , `<p>Hello world</p>`],
-		[ 'Calculate Cube' , `<input type='num' class='input'><button onclick='workersf('calculate')' id='submit'>Calculate</button>`]
+		[ 'Calculate Cube' , `<input type='num' class='input'><button onclick="workersf('calculate')" id='submit'>Calculate</button>`]
 	] ;
 function f1 (inputs)
 {
