@@ -15,6 +15,10 @@ function f1 (inputs)
 {
 	return math.pow(inputs[0],3);
 }
+function f2 (inputs)
+{
+	return math.pow(inputs[0],1/3);
+}
 const list = [
 	[1,0],
 	[0,1]
