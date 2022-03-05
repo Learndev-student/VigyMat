@@ -63,11 +63,11 @@ onmessage = ( Obj ) =>
 		switch (Obj.data['type'])
 		{
 				//TO EDIT
-			case 'functions' : Obj.data['content']['functions'].forEach( str => {
+			case 'functions' : Obj.data['content'].forEach( str => {
 						functions.append(new Function(str));
 			});
 					break;
-			case 'list' : list = Obj.data['content']['list'];
+			case 'list' : list = Obj.data['content'];
 					break;
 			case 'calculate' : calculate( Obj.data['content'] );
 					break;
