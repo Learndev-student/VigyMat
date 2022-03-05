@@ -64,7 +64,7 @@ onmessage = ( Obj ) =>
 		{
 				//TO EDIT
 			case 'functions' : Obj.data['content'].forEach( str => {
-						functions.append(new Function(str));
+						functions.push(new Function(str));
 			});
 					break;
 			case 'list' : list = Obj.data['content'];
