@@ -102,7 +102,7 @@ worker.onerror = (err)=>
 };
 worker.onmessage = ( m ) =>
 {
-	conosole.log(`Message came : ${m.data}`);
+	console.log(`Message came : ${m.data}`);
 	let type = m.data.type;
 	let content = m.data.content ;
 	switch (type)
