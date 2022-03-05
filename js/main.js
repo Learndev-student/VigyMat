@@ -95,15 +95,18 @@ window.onpopstate = () => reload() ;
 reload() ;
 worker.onmessage = ( m ) =>
 {
-	switch (m.data.type)
+	let type = m.data.type;
+	let content = m.data.content ;
+	switch (type)
 	{
 		case 'values' : let eles = document.getElementByClassName('input');
-			for( let i = 0; i<values.length ; i++)
+			let j = 0;
+			for( let i = 0; i < eles.length ; i++)
 			{
-				eles[i].value = m.data.content[i];
+				if (content[0][i] == 1) eles[i].value = content[1][j++] ;
 			}
 				break;
-		case 'error' : show_err( m.data.content ) ;
+		case 'error' : show_err( content ) ;
 				break;
 	}
 }

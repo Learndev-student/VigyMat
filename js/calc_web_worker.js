@@ -39,21 +39,17 @@ function calculate( inputs ){
 	let ans = [];
 	let in_arr = [];
 	inputs.forEach( i => {
-		if( i.io == "input" ) {
+		if( i['io'] == "input" ) {
 			a.push(1);
+			in_arr.push(i['value']) ;
 		} else {
 			a.push(0);
 		}
-		in_arr.push(i.val);
 	});
 	for( let n=0 ; n<list.length ; n++ ) {
 		if( arraysEqual(a,list[n]) ) {
 			ans = functions[n](in_arr);
-			let m = 0;
-			inputs.forEach( i => {
-				if( m != n ) i.value = ans[m];
-				m++;
-			});
+			Message('values' , [ a , ans ]) ;
 			break;
 		}
 	}
