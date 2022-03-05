@@ -60,7 +60,7 @@ async function d_import ( url )
 			module.functions.forEach( i =>
 				{
 					let s = i.toString();
-					f_str.push( `return ${s} ;`);
+					f_str.push( `return (${s}).call('obj',inputs) ;`);
 				});
 			Message( 'functions' , f_str );
 			Message( 'list' , module.list );
