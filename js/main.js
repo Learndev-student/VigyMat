@@ -6,10 +6,10 @@ let module;
 
 function Message( type , content )
 {
-        return {
+        worker.postMessage( {
                 'type' : type,
                 'content' : content
-        };
+        }) ;
 }
 
 function workersf( str )

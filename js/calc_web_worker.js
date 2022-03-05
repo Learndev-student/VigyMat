@@ -8,19 +8,19 @@ var list;
 
 function Message( type , content )
 {
-	return {
+	postMessage({
 		'type' : type,
 		'content' : content
-	};
+	}) ;
 }
 
 //To post an error
 function postErr( name , message )
 {
-	postMessage( Message( 'error' , {
+	Message( 'error' , {
 		'name' : name,
 		'message' : message
-	} ) );
+	} );
 }
 
 //Checks if two arrays are equal or not
