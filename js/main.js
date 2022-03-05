@@ -14,9 +14,12 @@ function Message( type , content )
 
 function workersf( str )
 {
+	console.log(`workersf(${str})`) ;
 	switch (str){
-		case 'calculate': let eles = document.getElementsByClassName('input');
+		case 'calculate': console.log(`case calculate`);
+			let eles = document.getElementsByClassName('input');
 			let inputs = [];
+			console.log(`eles.length : ${eles.length}`);
 			for(let i = 0; i<eles.length ; i++)
 			{
 				inputs[i] = {'val': eles[i].value , 'io':eles[i].dataset.io};
@@ -66,7 +69,7 @@ async function d_import ( url )
 // Dynamic links
 function d_links ()
 {
-	let links = document.getElementByClassName('d_links') ;
+	let links = document.getElementsByClassName('d_links') ;
 	for ( let i = 0 ; i < links.length ; i++ )
 	{
 		links[i].onclick = ( event ) => {
@@ -95,11 +98,12 @@ window.onpopstate = () => reload() ;
 reload() ;
 worker.onmessage = ( m ) =>
 {
+	conosole.log(`Message came : ${m.data}`);
 	let type = m.data.type;
 	let content = m.data.content ;
 	switch (type)
 	{
-		case 'values' : let eles = document.getElementByClassName('input');
+		case 'values' : let eles = document.getElementsByClassName('input');
 			let j = 0;
 			for( let i = 0; i < eles.length ; i++)
 			{
