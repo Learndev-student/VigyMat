@@ -1,5 +1,5 @@
 //Variable declarations
-var functions;
+var functions = [];
 //A container for input/output elements
 var inputs = [];
 
