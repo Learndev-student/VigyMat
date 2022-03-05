@@ -13,15 +13,21 @@ let html =
 	] ;
 function f1 (inputs)
 {
-	return inputs[0]**(3);
+	return [
+		inputs[0] ,
+		inputs[0]**(3)
+	];
 }
 function f2 (inputs)
 {
-	return inputs[0]**(1/3);
+	return [
+		inputs[0]**(1/3) ,
+		inputs[0]
+	];
 }
 const list = [
 	[1,0],
 	[0,1]
 ];
-let functions = [f1];
+let functions = [f1,f2];
 export { html , functions ,list }
