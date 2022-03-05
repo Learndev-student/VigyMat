@@ -1,7 +1,15 @@
 let html =
 	[
-		[ 'About' , `<p>Hello world</p>`],
-		[ 'Calculate Cube' , `<input type='num' class='input'><button onclick="workersf('calculate')" id='submit'>Calculate</button>`]
+		[ 
+			'About' ,
+			`<p>Hello world</p>`
+		] ,
+		[ 
+			'Calculate Cube' ,
+			`<input type='num' class='input' placeholder='3' data-io='input'>
+			<input type='num' class='input' placeholder='27' data-io='output'>
+			<button onclick="workersf('calculate')" id='submit'>Calculate</button>`
+		]
 	] ;
 function f1 (inputs)
 {
