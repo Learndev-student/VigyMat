@@ -35,6 +35,7 @@ function arraysEqual( a, b ) {
 
 //The calculate function to initialise the module functions according to the order of input and output elements
 function calculate( inputs ){
+	Message(`console` , `initiating calculate`);
 	let a = [];
 	let ans = [];
 	let in_arr = [];
@@ -46,6 +47,7 @@ function calculate( inputs ){
 			a.push(0);
 		}
 	});
+	Message(`console` , a)
 	for( let n=0 ; n<list.length ; n++ ) {
 		if( arraysEqual(a,list[n]) ) {
 			ans = functions[n](in_arr);

@@ -96,6 +96,10 @@ function show_err( err )
 }
 window.onpopstate = () => reload() ;
 reload() ;
+worker.onerror = (err)=>
+{
+	console.log(`Error occured` , err);
+};
 worker.onmessage = ( m ) =>
 {
 	conosole.log(`Message came : ${m.data}`);
