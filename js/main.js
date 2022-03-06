@@ -22,7 +22,7 @@ function workersf( str )
 			console.log(`eles.length : ${eles.length}`);
 			for(let i = 0; i<eles.length ; i++)
 			{
-				inputs[i] = {'val': eles[i].value , 'io':eles[i].dataset.io};
+				inputs[i] = {'value': eles[i].value , 'io':eles[i].dataset.io};
 			}
 			Message('calculate',inputs);
 			break;
