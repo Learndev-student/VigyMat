@@ -14,15 +14,15 @@ let html =
 function f1 (inputs)
 {
 	return [
-		inputs[0] ,
-		inputs[0]**(3)
+		float(inputs[0]) ,
+		float(inputs[0])**(3)
 	];
 }
 function f2 (inputs)
 {
 	return [
-		inputs[0]**(1/3) ,
-		inputs[0]
+		float(inputs[0])**(1/3) ,
+		float(inputs[0])
 	];
 }
 const list = [
