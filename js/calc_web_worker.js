@@ -47,11 +47,11 @@ function calculate( inputs ){
 			a.push(0);
 		}
 	});
-	Message(`console` , a , inputs , in_arr)
+	Message(`console` , [a  ,inputs, in_arr]);
 	for( let n=0 ; n<list.length ; n++ ) {
 		if( arraysEqual(a,list[n]) ) {
 			ans = functions[n](in_arr);
-			Message('values' , [ a , ans ]) ;
+			Message('values' , ans ) ;
 			break;
 		}
 	}
