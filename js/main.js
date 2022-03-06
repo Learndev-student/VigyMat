@@ -112,7 +112,7 @@ worker.onmessage = ( m ) =>
 			let j = 0;
 			for( let i = 0; i < eles.length ; i++)
 			{
-				if (content[0][i] == 1) eles[i].value = content[1][j++] ;
+				if (eles[i].dataset.io == 'output') eles[i].value = content[j++] ;
 			}
 				break;
 		case 'error' : show_err( content ) ;
