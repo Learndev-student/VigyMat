@@ -14,7 +14,7 @@ const html =
 				<input type='number' class='input' placeholder='2d diagonal' data-io='output'>
 				<input type='number' class='input' placeholder='3d diagonal' data-io='output'>
 				</br>
-				<button>Clear</button>
+				<button onclick="function(){ let e = document.getElementsByClassName('input') ; for(let i=0;i<e.length;i++){e[i].value='';}}">Clear</button>
 				<button onclick="workersf('calculate')" id='submit'>Calculate</button>
 			</div>`
 		]
