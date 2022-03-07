@@ -7,12 +7,12 @@
 		<link rel="stylesheet" href="/VigyMat/styles/main.css">
 		<noscript>Sorry!, Your browser does not support this website</noscript>
 		<script>
-			window.onerror = (e) =>
+			window.onerror = ( e ) =>
 			{
 				let p = document.createElement('p') ;
 				p.className = 'error' ;
 				p.innerHTML = ` ${e.name} : ${e.message} ` ;
-				document.body.appendChild(p) ;
+				document.body.appendChild( p ) ;
 			} ;
 		</script>
 		<script defer src="/VigyMat/js/main.js"></script>
@@ -21,7 +21,7 @@
 	<body>
 		<header id='header'>
 			<h2> VigyMat </h2>
-			<h4> V1.0.9 dev </h4>
+			<h4> V1.0.10 dev </h4>
 		</header>
 		<div id='app'></div>
 		<footer id='footer'>
