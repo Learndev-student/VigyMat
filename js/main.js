@@ -45,6 +45,15 @@ function render ( arr )
 			box.appendChild(content) ;
 			app.appendChild(box) ;
 		} ) ;
+	let e = app.getElementsByClassName('input');
+	for ( let i=0; i<e.length ; i++)
+	{
+		e[i].onclick = e[i].onchange = function(event)
+		{
+			let ele = event.target;
+			ele.dataset['io'] = (ele.value == '' || ele.value == null)? 'output' : 'input' ;
+		};
+	}
 }
 
 //Dynamic imports
