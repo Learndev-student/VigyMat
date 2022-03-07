@@ -8,11 +8,11 @@ const html =
 		[ 
 			'Calculate' ,
 			`<div id ='input1'>
-				<input type='num' class='input' placeholder='side' data-io='output'>
-				<input type='num' class='input' placeholder='volume' data-io='output'>
-				<input type='num' class='input' placeholder='total area' data-io='output'>
-				<input type='num' class='input' placeholder='2d diagonal' data-io='output'>
-				<input type='num' class='input' placeholder='3d diagonal' data-io='output'>
+				<input type='number' class='input' placeholder='side' data-io='output'>
+				<input type='number' class='input' placeholder='volume' data-io='output'>
+				<input type='number' class='input' placeholder='total area' data-io='output'>
+				<input type='number' class='input' placeholder='2d diagonal' data-io='output'>
+				<input type='number' class='input' placeholder='3d diagonal' data-io='output'>
 				</br>
 				<button>Clear</button>
 				<button onclick="workersf('calculate')" id='submit'>Calculate</button>
