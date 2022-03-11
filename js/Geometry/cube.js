@@ -7,16 +7,14 @@ const html =
 		] ,
 		[ 
 			'Calculate' ,
-			`<div id ='input1'>
-				<input type='number' class='input' placeholder='side' data-io='output'>
-				<input type='number' class='input' placeholder='volume' data-io='output'>
-				<input type='number' class='input' placeholder='total area' data-io='output'>
-				<input type='number' class='input' placeholder='2d diagonal' data-io='output'>
-				<input type='number' class='input' placeholder='3d diagonal' data-io='output'>
+			`<input-block>
+				<input-ele type='number' class='input' placeholder='side' data-io='output'>
+				<input-ele type='number' class='input' placeholder='volume' data-io='output'>
+				<input-ele type='number' class='input' placeholder='total area' data-io='output'>
+				<input-ele type='number' class='input' placeholder='2d diagonal' data-io='output'>
+				<input-ele type='number' class='input' placeholder='3d diagonal' data-io='output'>
 				</br>
-				<button onclick="function(){ let e = document.getElementsByClassName('input') ; for(let i=0;i<e.length;i++){e[i].value='';}}">Clear</button>
-				<button onclick="workersf('calculate')" id='submit'>Calculate</button>
-			</div>`
+				</input-block>`
 		]
 	] ;
 // ORDER = [ length , volume , total_area , 2d_diagonal , 3d_diagonal ]

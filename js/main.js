@@ -24,17 +24,8 @@ function workersf( str )
 	{
 		case 'calculate' : 
 			console.log( `case calculate` ) ;
-			let eles = document.getElementsByClassName( 'input' ) ;
-			let inputs = [] ;
+			let eles = document.getElementsByClassName( 'inp
 			console.log( `eles.length : ${ eles.length }` ) ;
-			for( let i = 0 ; i < eles.length ; i++ )
-			{
-				inputs[ i ] = 
-					{
-					'value' : eles[ i ].value ,
-					'io': eles[ i ].dataset.io
-				} ;
-			}
 			Message('calculate',inputs) ;
 			break ;
 	}
