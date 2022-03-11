@@ -16,21 +16,6 @@ function Message( type , content )
         }) ;
 }
 
-//Calling the worker's function
-function workersf( str )
-{
-	console.log( `workersf(${ str })` ) ;
-	switch ( str )
-	{
-		case 'calculate' : 
-			console.log( `case calculate` ) ;
-			let eles = document.getElementsByClassName( 'inp
-			console.log( `eles.length : ${ eles.length }` ) ;
-			Message('calculate',inputs) ;
-			break ;
-	}
-}
-
 //Rendering HTML
 function render ( arr )
 {
