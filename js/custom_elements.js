@@ -15,12 +15,6 @@ class InputElement extends HTMLElement
 				this.parentElement.trigger() ;
 			}
 		}
-	static get observedAttributes()
-	{
-	}
-	attributeChangedCallback(name, oldValue, newValue)
-	{
-	}
 }
 
 class InputBlock extends HTMLElement
