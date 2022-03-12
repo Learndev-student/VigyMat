@@ -1,7 +1,5 @@
-class InputElement extends HTMLElement
-{
-	constructor()
-	{
+class InputElement extends HTMLElement{
+	constructor(){
 		super();
 		this.contenteditable = 'true' ;
 		this.virtualkeyboardpolicy='manual' ;
@@ -9,30 +7,23 @@ class InputElement extends HTMLElement
 		this.placeholder ;
 		this.lastvalue ;
 		this.onclick = this.onchange = () => {
-			if ( this.lastValue != this.textContent )
-			{
+			if ( this.lastValue != this.textContent ){
 				this.isChanged = 'true' ;
 				this.parentElement.trigger() ;
 			}
 		}
-}
 
-class InputBlock extends HTMLElement
-{
-	constructor()
-	{
+class InputBlock extends HTMLElement{
+	constructor(){
 		super() ;
-		this.ontrigger = (inputs) =>
-		{
+		this.ontrigger = (inputs) =>{
 			Message('calculate',inputs);
 		} ;
 	}
-	trigger()
-	{
+	trigger(){
 		let elements = this.getElementsByTagName('input-ele') ;
 		let inputs = [];
-		for( let i =0 ; i< elements.length ; i++)
-		{
+		for( let i =0 ; i< elements.length ; i++){
 			inputs.push({
 				'value' : elements[i].value ,
 				'type' : elements[i].type
@@ -40,11 +31,9 @@ class InputBlock extends HTMLElement
 		}
 		this.ontrigger(inputs) ;
 	}
-	clear()
-	{
+	clear(){
 		let elements = this.getElementsByTagName('input-ele') ;
-		for (let i =0 ; i < elements.length ; i++)
-		{
+		for (let i =0 ; i < elements.length ; i++){
 			elements[i].texfContent = "" ;
 		}
 	}
