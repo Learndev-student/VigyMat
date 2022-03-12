@@ -11,8 +11,9 @@ class InputElement extends HTMLElement{
 				this.isChanged = 'true' ;
 				this.parentElement.trigger() ;
 			}
-		}
-
+		} ;
+	}
+}
 class InputBlock extends HTMLElement{
 	constructor(){
 		super() ;
