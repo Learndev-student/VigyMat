@@ -35,7 +35,7 @@ class InputBlock extends HTMLElement{
 	static #id = 0 ;
 	constructor(){
 		super() ;
-		let id0 = this.id = `id${this.#id++}`;
+		let id0 = this.id = `id${InputBlock.#id++}`;
 		this.ontrigger = (inputs) => {
 			Message('calculate',{
 				'id': id0 ,
