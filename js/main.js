@@ -28,7 +28,7 @@ function render(arr){
 			content.innerHTML = i[1];
 			box.appendChild(head);
 			box.appendChild(content);
-			app.appendChild(box):
+			app.appendChild(box);
 		});
 }
 
