@@ -1,6 +1,6 @@
 //Variable for Module's functions
 var functions = [] ;
-
+var id ;
 //Array of input values
 var inputs = [];
 
@@ -65,7 +65,10 @@ function calculate( inputs )
 		if ( arraysEqual( a , list[ n ] ) )
 		{
 			ans = functions[ n ]( in_arr ) ;
-			Message( 'values' , ans ) ;
+			Message( 'values' , {
+				'id' : id ,
+				'values' : ans
+			});
 			break ;
 		}
 	}
@@ -86,7 +89,8 @@ onmessage = ( Obj ) =>
 				list = Obj.data[ 'content' ] ;
 				break ;
 			case 'calculate' :
-				calculate( Obj.data[ 'content' ] ) ;
+				id = Obj.data['content']['id'] ;
+				calculate( Obj.data[ 'content' ]['values'] ) ;
 				break ;
 			default : 
 				postErr( 'Invalid message' , "" ) ;

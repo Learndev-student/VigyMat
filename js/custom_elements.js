@@ -6,19 +6,41 @@ class InputElement extends HTMLElement{
 		this.type ;
 		this.placeholder ;
 		this.lastvalue ;
-		this.onclick = this.onchange = () => {
-			if ( this.lastValue != this.textContent ){
-				this.isChanged = 'true' ;
-				this.parentElement.trigger() ;
-			}
+		let shadow = this.attachShadow({mode:'closed'});
+		let p = document.createElement('p');
+		p.textContent = this.textContent ;
+		p.observedAttributes = () =>{
+			return ['textContent'];
 		} ;
+		p.attributeChangedCallback = (name,oldValue,newValue) =>{
+			if (oldValue!=newValue) this.textContent = newValue;
+		}
+		shadow.appendChild(p);
+	}
+	get observedAttributes(){
+		return ['textContent'];
+	}
+	attributeChangedCallback(name, oldValue, newValue){
+		switch (name){
+			case 'textContent':
+				this.isChanged = true ;
+				this.shadowRoot.getElementsByTagName('p')[0].textContent = newValue ;
+				this.parentElememt.trigger() ;
+		}
 	}
 }
+
+
 class InputBlock extends HTMLElement{
+	static #id = 0 ;
 	constructor(){
 		super() ;
-		this.ontrigger = (inputs) =>{
-			Message('calculate',inputs);
+		let id0 = this.id = `id${this.#id++}`;
+		this.ontrigger = (inputs) => {
+			Message('calculate',{
+				'id': id0 ,
+				'valiez': inputs
+			});
 		} ;
 	}
 	trigger(){
@@ -35,8 +57,16 @@ class InputBlock extends HTMLElement{
 	clear(){
 		let elements = this.getElementsByTagName('input-ele') ;
 		for (let i =0 ; i < elements.length ; i++){
-			elements[i].texfContent = "" ;
+			elements[i].textContent = "" ;
+			elements[i].isChanged = false;
 		}
+	}
+	output(values){
+		let elements = this.getElementsByTagName('input-ele') ;
+                for (let i =0 ; i < elements.length ; i++){
+                        if (!elements[i].isChanged) elements[i].textContent = values[i];
+			elements[i].isChanged = false ;
+                }
 	}
 }
 
