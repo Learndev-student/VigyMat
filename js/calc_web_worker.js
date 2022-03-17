@@ -49,7 +49,7 @@ function calculate( inputs )
 	let ans = [] ;
 	let in_arr = [] ;
 	inputs.forEach( i => {
-		if( i[ 'io' ] == "input" )
+		if( i[ 'isChanged' ] )
 		{
 			a.push( 1 ) ;
 			in_arr.push( i[ 'value' ] ) ;

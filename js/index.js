@@ -1,9 +1,5 @@
 let html = [
-	[ 'About' , "Hello World!" ]
+	[ 'About' , "<a class='d_links' href='/Geometry/cube'>Cube</a>" ]
 ] ;
-function f1 ()
-{
-	alert('Test Completed');
-}
-let functions = [f1];
+let functions = [];
 export { html , functions }
