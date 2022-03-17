@@ -13,7 +13,7 @@ class InputElement extends HTMLElement{
 		this.isChanged = false;
 		let input = document.createElement('p');
 		input.contentEditable = true ;
-		input.virtualKeyboardPolicy = 'manual' ;
+		input.virtualKeyboardPolicy = 'auto' ;
 		input.inputmode = 'text' ;
 		input.id = code;
 		input.style=`
