@@ -8,12 +8,12 @@ const html =
 		[ 
 			'Calculate' ,
 			`<input-block>
-				<input-ele type='number' placeholder='side'>
-				<input-ele type='number' placeholder='volume'>
-				<input-ele type='number' placeholder='total area'>
-				<input-ele type='number' placeholder='2d diagonal'>
-				<input-ele type='number' placeholder='3d diagonal'>
-				</br>
+				side<input-ele type='number' placeholder='side'></input-ele>
+				volume<input-ele type='number' placeholder='volume'></input-ele>
+				TSA<input-ele type='number' placeholder='total area'></input-ele>
+				2d diagonal<input-ele type='number' placeholder='2d diagonal'></input-ele>
+				3d diagonal<input-ele type='number' placeholder='3d diagonal'></input-ele>
+				<button onclick="this.parentElement.clear()">Clear</button>
 				</input-block>`
 		]
 	] ;
@@ -25,6 +25,7 @@ function f0 (inputs)
 	//outputs = [ volume , total_area , 2d_diagonal , 3d_diagonal ]
 	let l = parseFloat(inputs[0]) ;
 	return [
+		l,
 		l**3 ,
 		6*l*l ,
 		l*(2**(1/2)) ,
