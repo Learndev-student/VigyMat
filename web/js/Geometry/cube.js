@@ -1,12 +1,10 @@
+import {Functions_obj} from '/web/js/additionals/basic_functions.js';
 const html =
-	[
-		[ 
-			'About' ,
+	{
+			'About' :
 			`<p>MODULE : Geometry/cube </br>ID : 1</p>
-			<p>This module is intented to provide calculations related to the geometry of a Cube</p>`
-		] ,
-		[ 
-			'Calculate' ,
+			<p>This module is intented to provide calculations related to the geometry of a Cube</p>` ,
+		'Calculate' :
 			`<input-block>
 				side<input-ele type='number' placeholder='side'></input-ele>
 				volume<input-ele type='number' placeholder='volume'></input-ele>
@@ -15,8 +13,7 @@ const html =
 				3d diagonal<input-ele type='number' placeholder='3d diagonal'></input-ele>
 				<button onclick="this.parentElement.clear()">Clear</button>
 				</input-block>`
-		]
-	] ;
+} ;
 // ORDER = [ length , volume , total_area , 2d_diagonal , 3d_diagonal ]
 	
 function f0 (inputs)
@@ -73,5 +70,6 @@ const list = [
 	[0,0,0,1,0] ,
 	[0,0,0,0,1]
 ];
-let functions = [ f0 , f1 ,f2 , f3 , f4 ] ;
-export { html , functions , list }
+let calc_functions = [ f0 , f1 ,f2 , f3 , f4 ] ;
+let Functions_obj0 = new Functions_obj(calc_functions);
+export { html , Functions_obj0 , list }

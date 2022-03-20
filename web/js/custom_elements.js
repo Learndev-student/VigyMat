@@ -34,7 +34,7 @@ class InputElement extends HTMLElement{
           }
           });
 	console.log(code);
-          this.observer.observe(root.querySelector(`#${code}`) , {'attributes':true,'childList':true,'subtree':true});
+          this.observer.observe(root.querySelector(`#${code}`) , {'attributes':true,'childList':true,'subtree':true,'characterData':true});
 	InputElement.#id++;
 	}
 
@@ -44,7 +44,7 @@ class InputElement extends HTMLElement{
 	setValue(value=''){
 		this.observer.disconnect();
 		this.shadowRoot.querySelector('p').textContent = value;
-		this.observer.observe(this.shadowRoot.querySelector(`#${this.code}`) , {'attributes':true,'childList':true,'subtree':true});
+		this.observer.observe(this.shadowRoot.querySelector(`#${this.code}`) , {'attributes':true,'childList':true,'subtree':true,'characterData':true});
 	}
 }
 

@@ -1,11 +1,11 @@
 //Creating Worker
-var worker = new Worker('/VigyMat/js/calc_web_worker.js');
+var worker = new Worker('/web/js/calc_web_worker.js');
 
 //App container element
 let app = document.getElementById('app');
 
 //Variable for Module-objects
-let module;
+var module;
 
 //A message Prototype
 function Message(type,content){
@@ -17,30 +17,33 @@ function Message(type,content){
 
 //Rendering HTML
 function render(arr){
-	arr.forEach( i => {
+	app.innerHTML = '';
+	Object.keys(arr).forEach( i => {
 			let box = document.createElement( 'div' );
 			let head = document.createElement( 'h3' );
 			let content = document.createElement( 'div' );
 			box.className = 'box';
 			head.className = 'heading';
 			content.className = 'content';
-			head.innerHTML = i[0];
-			content.innerHTML = i[1];
+			head.innerHTML = i;
+			content.innerHTML = arr[i];
 			box.appendChild(head);
 			box.appendChild(content);
 			app.appendChild(box);
 		});
+	d_links();
 }
 
 //Dynamic imports
 async function d_import(url){
-	let str = url.replace("https://learndev-student.github.io/VigyMat",'');
+	let str = url.replace("http://0.0.0.0:8000",'');
 	if(str == '/') str = '/index';
-	import(`https://learndev-student.github.io/VigyMat/js${str}.js`).then( m => {
+	import(`/web/js${str}.js`).then( m => {
 			module = m;
 			render(module.html);
 			let f_str = [];
-			module.functions.forEach( i =>{
+		console.log(module);
+			module.Functions_obj0.calc_functions.forEach( i =>{
 					let s = i.toString();
 					f_str.push(`return (${s}).call('obj',inputs) ;`);
 				});
@@ -54,9 +57,9 @@ function d_links(){
 	let links = document.getElementsByClassName('d_links');
 	for (let i = 0;i < links.length; i++){
 		links[i].onclick = (event) => {
-                        d_import(url);
-			history.pushState({} ,'',url);
-                        event.preventDefault() ;
+			event.preventDefault();
+                        d_import(links[i].href);
+			history.pushState({} ,'',links[i].href);
 		}
 	}
 }
