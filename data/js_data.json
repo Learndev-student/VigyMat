@@ -1,0 +1,14 @@
+{
+	[
+		"samples":{
+			["s1","Triangle",{
+				"web":"/web/js/samples/triangle.js"
+			}]
+		},
+		"Geometry":{
+			["1","Cube",{
+				"web":"/web/js/Geometry/cube.js"
+			}]
+		}
+	]
+}

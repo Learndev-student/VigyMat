@@ -21,6 +21,7 @@ class InputElement extends HTMLElement{
 		display:block;
 		width:50%;
 		background:#ccc;
+		padding:5px;
 		border-radius:7px;`;
 		this.shadowRoot.appendChild(input);
 	let root = this.shadowRoot;
@@ -34,7 +35,7 @@ class InputElement extends HTMLElement{
           }
           });
 	console.log(code);
-          this.observer.observe(root.querySelector(`#${code}`) , {'attributes':true,'childList':true,'subtree':true});
+          this.observer.observe(root.querySelector(`#${code}`) , {'attributes':true,'childList':true,'subtree':true,'characterData':true});
 	InputElement.#id++;
 	}
 
@@ -44,7 +45,7 @@ class InputElement extends HTMLElement{
 	setValue(value=''){
 		this.observer.disconnect();
 		this.shadowRoot.querySelector('p').textContent = value;
-		this.observer.observe(this.shadowRoot.querySelector(`#${this.code}`) , {'attributes':true,'childList':true,'subtree':true});
+		this.observer.observe(this.shadowRoot.querySelector(`#${this.code}`) , {'attributes':true,'childList':true,'subtree':true,'characterData':true});
 	}
 }
 
