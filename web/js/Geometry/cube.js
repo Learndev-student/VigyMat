@@ -6,12 +6,11 @@ const html =
 			<p>This module is intented to provide calculations related to the geometry of a Cube</p>` ,
 		'Calculate' :
 			`<input-block>
-				side<input-ele type='number' placeholder='side'></input-ele>
-				volume<input-ele type='number' placeholder='volume'></input-ele>
-				TSA<input-ele type='number' placeholder='total area'></input-ele>
-				2d diagonal<input-ele type='number' placeholder='2d diagonal'></input-ele>
-				3d diagonal<input-ele type='number' placeholder='3d diagonal'></input-ele>
-				<button onclick="this.parentElement.clear()">Clear</button>
+				side<input-ele type='text' name='side'></input-ele>
+				volume<input-ele type='text' name='volume'></input-ele>
+				TSA<input-ele type='text' name='total area'></input-ele>
+				2d diagonal<input-ele type='text' name='2d diagonal'></input-ele>
+				3d diagonal<input-ele type='text' name='3d diagonal'></input-ele>
 				</input-block>`
 } ;
 // ORDER = [ length , volume , total_area , 2d_diagonal , 3d_diagonal ]
