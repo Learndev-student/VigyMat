@@ -8,7 +8,7 @@ class InputElement extends HTMLElement{
 	constructor(){
 		super();
 		if (!(InputElement.#id)) InputElement.#id=1;//initiate #id if not initiated with value
-		this.type ;				//input-ele type
+		this.type = 'text';				//input-ele type
 		let code="inputEle";			//root-word for ids
 		for(let a of (InputElement.#id).toString()){
 			code+=table[a];			//id constructor
@@ -25,12 +25,15 @@ class InputElement extends HTMLElement{
 	}
 	//Attribute 'type' change callback
 	typeChange(type){
+		this.shadowRoot.innerHTML = "";
 		switch (type){
 			case 'text':
 				this.type = 'text' ;
 				let div = document.createElement('div');
 				div.contentEditable = 'true';
 				div.virtualKeyboardPolicy = 'auto';
+				let span = document.createElement('span');
+				span.textContent = `${this.name}  `;
 				let style = document.createElement('style');
 				style.innerHTML = `div{
 					min-height: 18px;
@@ -38,6 +41,7 @@ class InputElement extends HTMLElement{
 					background: #ccc;
 					}`;
 				let root = this.shadowRoot;
+				root.appendChild(span);
 				root.appendChild(style);
 				root.appendChild(div);
 				let parentElement = this.parentNode.host;
@@ -61,6 +65,7 @@ class InputElement extends HTMLElement{
 		switch (name){
 			case 'name' : 
 				this.name = newValue;
+				this.typeChange(this.type);
 				break;
 			case 'type':
 				this.typeChange(newValue);
