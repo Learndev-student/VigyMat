@@ -37,7 +37,9 @@ class InputElement extends HTMLElement{
 				let style = document.createElement('style');
 				style.innerHTML = `div{
 					min-height: 18px;
-					width: 70%;
+					margin:10px;
+					border-radius:10px;
+					padding:10px;
 					background: #ccc;
 					}`;
 				let root = this.shadowRoot;
@@ -121,7 +123,17 @@ class InputBlock extends HTMLElement{
 		let div = document.createElement('div');
 		div.id = 'outputbox';
 		let style = document.createElement('style');
-		style.innerHTML = '' //To edit here....
+		style.innerHTML = `div{
+        background: #333;
+        border-radius:10px;
+        min-height:30%;
+        padding:10px;
+	margin:10px;
+        color:#fff;
+      }
+    div span{
+      color:#267cd5;
+    }` //To edit here....
 		let clear = document.createElement('button');
 		clear.textContent = 'CLEAR';
 		clear.onclick =()=> this.clear();
