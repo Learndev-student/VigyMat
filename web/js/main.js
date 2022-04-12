@@ -6,6 +6,7 @@ let app = document.getElementById('app');
 
 //Variable for Module-objects
 var module;
+var ORDER=[];
 
 //A message Prototype
 function Message(type, content) {
@@ -36,11 +37,12 @@ function render(arr) {
 
 //Dynamic imports
 async function d_import(url) {
-  //let str = url.replace("http://0.0.0.0:8000",'');
-  let str = url.replace("http://localhost:8158");
+  let str = url.replace("http://0.0.0.0:8000",'');
+  //let str = url.replace("http://localhost:8158");
   if (str == '/') str = '/index';
   import(`/web/js${str}.js`).then(m => {
     module = m;
+	  ORDER = module.ORDER;
     render(module.html);
     let f_str = [];
     console.log(module);

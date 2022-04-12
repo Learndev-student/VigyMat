@@ -13,11 +13,11 @@ class InputElement extends HTMLElement{
 		for(let a of (InputElement.#id).toString()){
 			code+=table[a];			//id constructor
 		}
-		this.id = code ; 			//id of input-ele
+		this.id = code;
 		this.value ;
 		this.attachShadow({mode:'open'});	//attach shadow DOM
-		this.isChanged = false;			//property for if the input has given
-	InputElement.#id++;				//increment #id for another element
+		this.isChanged = false;			//property for if the input has give
+		InputElement.#id++;			//increment #id for another element
 	}
 
 	connectedCallback(){
@@ -46,11 +46,11 @@ class InputElement extends HTMLElement{
 				root.appendChild(span);
 				root.appendChild(style);
 				root.appendChild(div);
-				let parentElement = this.parentNode.host;
 				let callback = function( mutationsList , observer){
+					console.log('triggered');
 					root.host.value = div.textContent;
 					root.host.isChanged = true;
-					if (parentElement) parentElement.trigger();
+					(root.host).parentNode.host.trigger();
 				};
 				if (this.observer) delete this.observer;
 				this.observer = new MutationObserver(callback);
@@ -60,19 +60,21 @@ class InputElement extends HTMLElement{
 	}
 
 	static get observedAttributes(){
-		return ['name','type'];
+		return ['name','type','value'];
 	}
 
 	attributeChangedCallback(name,oldValue,newValue){
 		switch (name){
 			case 'name' : 
 				this.name = newValue;
+				this.id = this.name;
 				this.typeChange(this.type);
 				break;
 			case 'type':
 				this.typeChange(newValue);
-				//code to be added
 				break;
+			case 'value':
+				this.setValue(newValue);
 		}
 	}
 
@@ -115,7 +117,38 @@ class InputBlock extends HTMLElement{
 
 	connectedCallback(){
 		console.log('connected callback');
-		this.shadowRoot.innerHTML = this.innerHTML;
+		let searchBar = document.createElement('input');
+		searchBar.setAttribute('list','input-lists') ;
+		searchBar.placeholder = "search for inputs";
+		searchBar.id = `${this.id}searcbar`;
+		let template = this.querySelector('template');
+		let inputEles = this.querySelectorAll('input-ele');
+		let dataList = document.createElement('datalist');
+		dataList.id = 'input-lists';
+		for (let i=0;i<inputEles.length;i++){
+			let option = document.createElement('option');
+			option.value = inputEles[i].name;
+			dataList.appendChild(option);
+		}
+		let addButton = document.createElement('button');
+		 addButton.textContent = "Add";
+		let root = this.shadowRoot;
+		addButton.onclick =()=>{
+			let val = searchBar.value;
+			console.log(val);
+			for ( let i = 0; i<inputEles.length;i++){
+				console.log(inputEles[i].name);
+				if (inputEles[i].name == val){
+					console.log('working',this);
+					this.removeChild(inputEles[i]);
+					root.insertBefore(inputEles[i],root.querySelector('#outputbox'));
+				}
+			}
+		};
+		root.appendChild(dataList);
+		root.appendChild(searchBar);
+		root.appendChild(addButton);
+	//	this.shadowRoot.innerHTML = this.innerHTML;
 		//let elements = this.querySelectorAll('input-ele');
 		//for ( let i=0; i<elements.length ; i++){
 		//	this.shadowRoot.appendChild(elements[i]);
@@ -133,7 +166,7 @@ class InputBlock extends HTMLElement{
       }
     div span{
       color:#267cd5;
-    }` //To edit here....
+    }`;
 		let clear = document.createElement('button');
 		clear.textContent = 'CLEAR';
 		clear.onclick =()=> this.clear();
@@ -160,12 +193,14 @@ class InputBlock extends HTMLElement{
 
 	//trigger method for ontrigger preparation
 	trigger(){
-		let elements = this.shadowRoot.querySelectorAll('input-ele') ;
+		console.log(ORDER);
 		let inputs = [];
-		for( let i =0 ; i< elements.length ; i++){
+		for( let i =0 ; i< ORDER.length ; i++){
+			let e = (this.shadowRoot.querySelector(`#${ORDER[i]}`))?(this.shadowRoot.querySelector(`#${ORDER[i]}`)) : this.querySelector(`#${ORDER[i]}`);
+			console.log(e.isChanged);
 			inputs.push({
-				'isChanged': elements[i].isChanged ,
-				'value' : elements[i].value
+				'isChanged': e.isChanged ,
+				'value' : e.value
 			}) ;
 		}
 		this.ontrigger(inputs) ;
@@ -183,13 +218,15 @@ class InputBlock extends HTMLElement{
 
 	//output the values
 	output(values){
-		let elements = this.shadowRoot.querySelectorAll('input-ele') ;
 		let out = this.shadowRoot.querySelector('#outputbox');
 		out.innerHTML = "";
-                for (let i =0 ; i < elements.length ; i++){
-                        if (!elements[i].isChanged) elements[i].setValue(values[i]);
-			out.innerHTML += `<p><span>${elements[i].name}</span> ${elements[i].value}</p>`;
-			elements[i].isChanged = false ;
+                for (let i =0 ; i < ORDER.length ; i++){
+			let e = this.shadowRoot.querySelector(`#${ORDER[i]}`);
+			if (e!=null){
+				if (!e.isChanged) e.setValue(values[i]);
+			e.isChanged = false;
+			}
+			out.innerHTML += `<p><span>${ORDER[i]}</span> ${values[i]}</p>`;
                 }
 	}
 }
@@ -197,3 +234,4 @@ class InputBlock extends HTMLElement{
 //Custom elements definition
 customElements.define('input-ele' , InputElement ) ;
 customElements.define('input-block' , InputBlock ) ;
+//To modify new input array mechanism

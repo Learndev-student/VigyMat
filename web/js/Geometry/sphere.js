@@ -2,19 +2,19 @@ import {Functions_obj} from '/web/js/additionals/basic_functions.js';
 const html =
 	{
 			'About' :
-			`<p>MODULE : Geometry/cube </br>ID : 1</p>
-			<p>This module is intented to provide calculations related to the geometry of a Cube</p>` ,
+			`<p>MODULE : Geometry/sphere </br>ID : 2</p>
+			<p>This module is intented to provide calculations related to the geometry of a Sphere</p>` ,
 		'Calculate' :
-			`<input-block>
-				this.observer.observe(div,{'attributes':true,'childList':true,'subtree':true,'characterData':true});
+			`<template>
 				<input-ele type='text' name='side'></input-ele>
 				<input-ele type='text' name='volume'></input-ele>
-				<input-ele type='text' name='total_area'></input-ele>
-				<input-ele type='text' name='diagonal'></input-ele>
-				<input-ele type='text' name='three_d_diagonal'></input-ele>
-				</input-block>`
+				<input-ele type='text' name='total area'></input-ele>
+				<input-ele type='text' name='2d diagonal'></input-ele>
+				<input-ele type='text' name='3d diagonal'></input-ele>
+				</template>>`
 } ;
-	const ORDER = [ 'side','volume','total_area','diagonal','three_d_diagonal'];
+// ORDER = [ length , volume , total_area , 2d_diagonal , 3d_diagonal ]
+	
 function f0 (inputs)
 {
 	//inputs = [ length ]
@@ -71,4 +71,4 @@ const list = [
 ];
 let calc_functions = [ f0 , f1 ,f2 , f3 , f4 ] ;
 let Functions_obj0 = new Functions_obj(calc_functions);
-export { html , Functions_obj0 , list , ORDER}
+export { html , Functions_obj0 , list }
