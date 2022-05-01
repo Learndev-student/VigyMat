@@ -2,33 +2,18 @@ import {Functions_obj} from '/VigyMat/web/js/additionals/basic_functions.js';
 const html =
 	{
 			'About' :
-			`<p>MODULE : Geometry/cube </br>ID : 1</p>
-			<p>This module is intented to provide calculations related to the geometry of a Cube</p>` ,
-		'Calculate' :
-			`<input-block>
-				side<input-ele type='number' placeholder='side'></input-ele>
-				volume<input-ele type='number' placeholder='volume'></input-ele>
-				TSA<input-ele type='number' placeholder='total area'></input-ele>
-				2d diagonal<input-ele type='number' placeholder='2d diagonal'></input-ele>
-				3d diagonal<input-ele type='number' placeholder='3d diagonal'></input-ele>
-				<button onclick="this.parentNode.host.clear()">Clear</button>
-				</input-block>`
-import {Functions_obj} from '/web/js/additionals/basic_functions.js';
-const html =
-	{
-			'About' :
 			`<p>MODULE : Geometry/sphere </br>ID : 2</p>
 			<p>This module is intented to provide calculations related to the geometry of a Sphere</p>` ,
 		'Calculate' :
-			`<template>
+			`<input-block>
 				<input-ele type='text' name='side'></input-ele>
 				<input-ele type='text' name='volume'></input-ele>
-				<input-ele type='text' name='total area'></input-ele>
-				<input-ele type='text' name='2d diagonal'></input-ele>
-				<input-ele type='text' name='3d diagonal'></input-ele>
-			</template>`
+				<input-ele type='text' name='total_area'></input-ele>
+				<input-ele type='text' name='two_d_diagonal'></input-ele>
+				<input-ele type='text' name='three_d_diagonal'></input-ele>
+			</input-block>`
 } ;
-	const ORDER = [ 'side','volume','total_area','diagonal','three_d_diagonal'];
+const ORDER = [ 'side','volume','total_area','two_d_diagonal','three_d_diagonal'];
 function f0 (inputs)
 {
 	//inputs = [ length ]

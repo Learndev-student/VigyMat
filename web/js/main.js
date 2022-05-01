@@ -6,6 +6,7 @@ let app = document.getElementById('app');
 
 //Variable for Module-objects
 var module;
+var ORDER=[];
 
 //A message Prototype
 function Message(type,content){
@@ -36,11 +37,12 @@ function render(arr){
 
 //Dynamic imports
 async function d_import(url){
-	let str = url.replace('https://learndev-student.github.io/VigyMat','');
+	let str = url.replace('https://learndev-student/VigyMat','');
 	if(str == '/') str = '/index';
 	import(`/VigyMat/web/js${str}.js`).then( m => {
 			module = m;
 			render(module.html);
+		ORDER = module.ORDER;
 			let f_str = [];
 		console.log(module);
 			module.Functions_obj0.calc_functions.forEach( i =>{
