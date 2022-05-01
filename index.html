@@ -14,10 +14,10 @@
 				p.innerHTML = ` ${e.name} : ${e.message} ` ;
 				document.body.appendChild( p ) ;
 			} ;
+			const prefix= (window.location.hostname=='localhost')?``:`/VigyMat`;
 		</script>
 		<script defer src="/VigyMat/web/js/main.js"></script>
 		<script defer src="/VigyMat/web/js/custom_elements.js"></script>
-                <script defer type="module" src="/VigyMat/web/js/firebase.js"></script>
 	</head>
 	<body>
 		<header id='header'>
