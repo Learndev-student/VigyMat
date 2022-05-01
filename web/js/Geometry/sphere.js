@@ -13,22 +13,8 @@ const html =
 				3d diagonal<input-ele type='number' placeholder='3d diagonal'></input-ele>
 				<button onclick="this.parentNode.host.clear()">Clear</button>
 				</input-block>`
-import {Functions_obj} from '/web/js/additionals/basic_functions.js';
-const html =
-	{
-			'About' :
-			`<p>MODULE : Geometry/sphere </br>ID : 2</p>
-			<p>This module is intented to provide calculations related to the geometry of a Sphere</p>` ,
-		'Calculate' :
-			`<template>
-				<input-ele type='text' name='side'></input-ele>
-				<input-ele type='text' name='volume'></input-ele>
-				<input-ele type='text' name='total area'></input-ele>
-				<input-ele type='text' name='2d diagonal'></input-ele>
-				<input-ele type='text' name='3d diagonal'></input-ele>
-			</template>`
-} ;
-	const ORDER = [ 'side','volume','total_area','diagonal','three_d_diagonal'];
+// ORDER = [ length , volume , total_area , 2d_diagonal , 3d_diagonal ]
+	
 function f0 (inputs)
 {
 	//inputs = [ length ]
@@ -85,4 +71,4 @@ const list = [
 ];
 let calc_functions = [ f0 , f1 ,f2 , f3 , f4 ] ;
 let Functions_obj0 = new Functions_obj(calc_functions);
-export { html , Functions_obj0 , list , ORDER}
+export { html , Functions_obj0 , list }
