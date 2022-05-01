@@ -36,10 +36,9 @@ function render(arr){
 
 //Dynamic imports
 async function d_import(url){
-	let str;
-	str = url.replace(window.origin,'');
+	let str = url.replace('https://learndev-student.github.io/VigyMat','');
 	if(str == '/') str = '/index';
-	import(`${prefix}/web/js${str}.js`).then( m => {
+	import(`/VigyMat/web/js${str}.js`).then( m => {
 			module = m;
 			render(module.html);
 			let f_str = [];
