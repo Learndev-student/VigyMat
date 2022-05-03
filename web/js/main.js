@@ -1,5 +1,5 @@
 //Creating Worker
-var worker = new Worker('/VigyMat/web/js/calc_web_worker.js');
+var worker = new Worker('/web/js/calc_web_worker.js');
 
 //App container element
 let app = document.getElementById('app');
@@ -37,9 +37,9 @@ function render(arr){
 
 //Dynamic imports
 async function d_import(url){
-	let str = url.replace('https://learndev-student/VigyMat','');
+	let str = url.replace('http://0.0.0.0:8000','');
 	if(str == '/') str = '/index';
-	import(`/VigyMat/web/js${str}.js`).then( m => {
+	import(`/web/js${str}.js`).then( m => {
 			module = m;
 			render(module.html);
 		ORDER = module.ORDER;

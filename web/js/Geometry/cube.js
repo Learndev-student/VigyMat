@@ -1,4 +1,4 @@
-import {Functions_obj} from '/VigyMat/web/js/additionals/basic_functions.js';
+import {Functions_obj} from '/web/js/additionals/basic_functions.js';
 const html =
 	{
 			'About' :
