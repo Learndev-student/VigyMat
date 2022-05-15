@@ -37,7 +37,7 @@ function render(arr){
 
 //Dynamic imports
 async function d_import(url){
-	let str = url.replace('https://learndev-student/VigyMat','');
+	let str = url.replace('https://learndev-student.github.io/VigyMat','');
 	if(str == '/') str = '/index';
 	import(`/VigyMat/web/js${str}.js`).then( m => {
 			module = m;
